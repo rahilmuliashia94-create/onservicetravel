@@ -1,71 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>OnServiceTravel | Global Workforce Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
-    header {
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-weight: bold;
-      font-size: 22px;
-    }
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-    }
-    .hero h1 {
-      font-size: 48px;
-    }
-    .hero p {
-      font-size: 20px;
-      margin-top: 20px;
-      color: #cbd5e1;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #020617;
-      margin-top: 100px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OnServiceTravel | Global Workforce Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  scroll-behavior: smooth;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+.hero {
+  text-align: center;
+  padding: 140px 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+  font-size: 48px;
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section {
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  margin: 20px;
+  display: inline-block;
+  width: 280px;
+  transition: 0.4s;
+}
+
+.glass:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background: rgba(0,0,0,0.5);
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px 22px;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <div class="logo">OnServiceTravel</div>
-  <div>Global Recruitment Agency</div>
-</header>
+<nav>
+  <div><strong>OnServiceTravel</strong></div>
+  <div>
+    <a href="#services">Services</a>
+    <a href="#countries">Countries</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
 <section class="hero">
   <h1>Connecting Indian Workforce to Global Opportunities</h1>
-  <p>We specialize in deploying reliable manpower to Europe, Israel, Canada and beyond.</p>
-  <a href="#" class="btn">Partner With Us</a>
+  <p>Premium manpower deployment solutions worldwide.</p>
 </section>
 
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <div class="glass">Unskilled Workforce</div>
+  <div class="glass">Semi-Skilled Workers</div>
+  <div class="glass">Employer Partnerships</div>
+</section>
+
+<section id="countries" class="section">
+  <h2>Countries We Serve</h2>
+  <div class="glass">Israel</div>
+  <div class="glass">France</div>
+  <div class="glass">Canada</div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Send Inquiry</h2>
+  <form action="https://formsubmit.co/YOUR-EMAIL@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+    <button type="submit">Send Inquiry</button>
+  </form>
+</section>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+Chat on WhatsApp
+</a>
+
 <footer>
-  © 2026 OnServiceTravel. All Rights Reserved.
+© 2026 OnServiceTravel. All Rights Reserved.
 </footer>
 
 </body>
 </html>
+
