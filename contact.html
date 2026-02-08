@@ -1,35 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact OSTC | Overseas Recruitment Inquiry</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <div><strong>OnServiceTravel</strong></div>
-  <div>
+<header>
+  <div class="logo">OSTC</div>
+  <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="countries.html">Countries</a>
     <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- CONTACT HEADER -->
+<section class="section reveal">
+  <h2>Get in Touch with OSTC</h2>
+  <p>
+    Whether you are an international employer seeking reliable manpower
+    or a candidate ready for overseas employment,
+    OSTC is your trusted recruitment partner.
+  </p>
+</section>
+
+<!-- OFFICE DETAILS -->
+<section class="section reveal">
+  <h2>Head Office – Rajkot</h2>
+
+  <div class="card">
+    <p><strong>Address:</strong><br>
+    Everest House,<br>
+    Between Mavdi & Gondal Circle,<br>
+    150 Feet Ring Road,<br>
+    Rajkot, Gujarat – 360004, India</p>
+
+    <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+    <p><strong>Email:</strong> info@ostcglobal.com</p>
+
+    <p><strong>Working Hours:</strong><br>
+    Monday – Saturday | 10:00 AM – 7:00 PM (IST)
+    </p>
   </div>
-</nav>
+</section>
 
-<div class="container">
-  <h1>Contact Us</h1>
-  <div class="glass">
-    <form action="https://formsubmit.co/YOUR-EMAIL@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required><br><br>
-      <input type="email" name="email" placeholder="Your Email" required><br><br>
-      <textarea name="message" rows="4" placeholder="Your Message"></textarea><br><br>
-      <button type="submit">Send Inquiry</button>
-    </form>
-  </div>
-</div>
+<!-- EMPLOYER FORM -->
+<section class="section reveal">
+  <h2>Employer Inquiry Form</h2>
 
-<footer>© 2026 OnServiceTravel</footer>
+  <form class="card">
+    <input type="text" placeholder="Company Name & Country" required>
+    <input type="text" placeholder="Contact Person Name" required>
+    <input type="text" placeholder="Job Categories Required" required>
+    <input type="number" placeholder="Number of Workers Required" required>
+    <textarea placeholder="Project Details / Additional Information" rows="4"></textarea>
+    <button type="submit" class="btn">Submit Employer Inquiry</button>
+  </form>
+</section>
 
+<!-- CANDIDATE FORM -->
+<section class="section reveal">
+  <h2>Candidate Inquiry Form</h2>
+
+  <form class="card">
+    <input type="text" placeholder="Full Name (As per Passport)" required>
+    <input type="tel" placeholder="Mobile / WhatsApp Number" required>
+    <input type="text" placeholder="Skill / Trade" required>
+    <input type="text" placeholder="Passport Status (Yes / Applied / No)" required>
+    <input type="text" placeholder="Preferred Country" required>
+    <input type="file">
+    <button type="submit" class="btn">Submit Application</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 On Service Travel Consultants (OSTC) | Rajkot, Gujarat, India
+</footer>
+
+<a href="contact.html" class="sticky-cta">Apply Now</a>
+<a href="https://wa.me/0000000000" class="whatsapp">W</a>
+
+<script src="script.js"></script>
 </body>
 </html>
