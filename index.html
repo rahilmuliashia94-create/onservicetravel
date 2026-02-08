@@ -4,10 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OnServiceTravel Consultants | Global Workforce Solutions</title>
+
 <link rel="stylesheet" href="style.css">
+
+<!-- Vanta Background -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
 </head>
 
-<body>
+<body id="vanta-bg">
+
+<!-- Floating Particles -->
+<div class="leaf-container">
+  <span class="leaf"></span>
+  <span class="leaf"></span>
+  <span class="leaf"></span>
+  <span class="leaf"></span>
+</div>
 
 <nav>
   <div><strong>OnServiceTravel Consultants</strong></div>
@@ -27,39 +41,35 @@
   <div class="glass reveal">
     <p>
       OnServiceTravel Consultants is a professionally managed overseas manpower recruitment 
-      and workforce consulting firm dedicated to connecting skilled Indian talent with 
-      genuine international employment opportunities.
+      and workforce consulting firm dedicated to connecting skilled Indian talent 
+      with genuine international employment opportunities.
     </p>
     <p>
-      Based in Rajkot, Gujarat, we serve both job seekers and global employers 
+      Based in Rajkot, Gujarat, we serve job seekers and global employers 
       through structured recruitment, ethical placement, and end-to-end support services.
     </p>
+    <button class="btn-glow">Start Your Global Journey</button>
   </div>
 
   <h2 class="reveal">Our Objective</h2>
 
   <div class="glass reveal">
     <p>
-      Our consultancy operates with one clear objective: to create reliable, 
-      transparent, and long-term employment pathways across borders.
-    </p>
-    <p>
-      Whether you are a candidate looking to build a secure future abroad 
-      or an employer searching for dependable manpower solutions, 
-      OnServiceTravel Consultants is your trusted partner.
+      We create reliable, transparent, and long-term employment pathways across borders.
+      Whether you are building your career abroad or seeking dependable manpower solutions,
+      we are your trusted partner.
     </p>
   </div>
 
-  <h2 class="reveal">Why Choose OnServiceTravel Consultants</h2>
+  <h2 class="reveal">Industries We Support</h2>
 
   <div class="glass reveal">
     <ul>
-      <li>Proven experience in overseas manpower recruitment</li>
-      <li>Ethical and transparent recruitment practices</li>
-      <li>Verified employer connections</li>
-      <li>Personalized candidate support</li>
-      <li>Training and preparation services</li>
-      <li>Reliable post-placement assistance</li>
+      <li>Hospitality & Hotel Services</li>
+      <li>Facility Management & Cleaning Services</li>
+      <li>Administrative & Office Support</li>
+      <li>Commercial & General Labor</li>
+      <li>Maintenance & Service Roles</li>
     </ul>
   </div>
 
@@ -71,32 +81,10 @@
       <li>Profile Evaluation & Screening</li>
       <li>Job Matching & Employer Shortlisting</li>
       <li>Interview & Selection</li>
-      <li>Documentation & Compliance Checks</li>
+      <li>Documentation & Compliance</li>
       <li>Travel Coordination & Departure Support</li>
       <li>Post-Placement Assistance</li>
     </ul>
-  </div>
-
-  <h2 class="reveal">Industries We Support</h2>
-
-  <div class="glass reveal">
-    <ul>
-      <li>Hospitality and Hotel Services</li>
-      <li>Facility Management and Cleaning Services</li>
-      <li>Office and Administrative Support</li>
-      <li>Commercial and General Labor</li>
-      <li>Maintenance and Service Roles</li>
-    </ul>
-  </div>
-
-  <h2 class="reveal">Start Your Global Career Journey</h2>
-
-  <div class="glass reveal">
-    <p>
-      Partner with us for reliable manpower solutions. 
-      Contact our consultants today for verified overseas job opportunities 
-      and structured recruitment support.
-    </p>
   </div>
 
 </div>
@@ -109,8 +97,26 @@
   © 2026 OnServiceTravel Consultants | Rajkot, Gujarat, India
 </footer>
 
+<!-- Vanta Initialization -->
+<script>
+VANTA.WAVES({
+  el: "#vanta-bg",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0x1e293b,
+  shininess: 60,
+  waveHeight: 15,
+  waveSpeed: 0.8,
+  zoom: 0.9
+})
+</script>
+
 <script src="script.js"></script>
 
 </body>
 </html>
-
