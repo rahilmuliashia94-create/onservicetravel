@@ -21,109 +21,93 @@
 </header>
 
 <section class="section">
-  <h2>Live International Job Openings</h2>
-  <p>All positions are legally verified and employer-approved.</p>
+  <h2>Current International Job Openings</h2>
+  <p>All positions are verified and legally compliant.</p>
 </section>
 
 <section class="section">
-  <div id="jobsContainer" class="grid"></div>
+  <div class="grid">
+
+    <!-- FEATURED JOB -->
+    <div class="card featured-job">
+      <div class="badge-new">FEATURED</div>
+      <h3>🇮🇱 Israel – Steel Fixer</h3>
+      <p><strong>Job ID:</strong> IL-SF-1024</p>
+      <p><strong>Salary:</strong> ₹1,50,000 – ₹1,80,000 per month</p>
+      <p class="slots">Only 12 positions left</p>
+      <p class="countdown" id="countdown1"></p>
+      <button class="btn" onclick="applyJob('Israel','Steel Fixer')">
+        Apply Now
+      </button>
+    </div>
+
+    <!-- CAR MECHANIC -->
+    <div class="card">
+      <h3>🇮🇱 Israel – Car Mechanic</h3>
+      <p><strong>Job ID:</strong> IL-CM-2041</p>
+      <p><strong>Salary:</strong> ₹1,20,000 – ₹1,60,000 per month</p>
+      <p class="slots">Only 8 positions left</p>
+      <p class="countdown" id="countdown2"></p>
+      <button class="btn" onclick="applyJob('Israel','Car Mechanic')">
+        Apply Now
+      </button>
+    </div>
+
+    <!-- WAREHOUSE -->
+    <div class="card">
+      <h3>🇨🇿 Czech Republic – Warehouse Worker</h3>
+      <p><strong>Job ID:</strong> CZ-WH-3302</p>
+      <p><strong>Salary:</strong> €1,300 – €1,600 per month</p>
+      <p class="slots">Only 15 positions left</p>
+      <p class="countdown" id="countdown3"></p>
+      <button class="btn" onclick="applyJob('Czech Republic','Warehouse Worker')">
+        Apply Now
+      </button>
+    </div>
+
+    <!-- MALTA -->
+    <div class="card">
+      <div class="badge-new">NEW</div>
+      <h3>🇲🇹 Malta – Car Body Sprayer</h3>
+      <p><strong>Job ID:</strong> MT-CB-4411</p>
+      <p><strong>Salary:</strong> €1,800 – €2,200 per month</p>
+      <p class="slots">Only 5 positions left</p>
+      <p class="countdown" id="countdown4"></p>
+      <button class="btn" onclick="applyJob('Malta','Car Body Sprayer')">
+        Apply Now
+      </button>
+    </div>
+
+  </div>
 </section>
 
 <footer>
-  © 2026 On Service Travel Consultants (OSTC) | Rajkot, Gujarat, India
+  © 2026 OSTC | Rajkot, Gujarat, India
 </footer>
 
-<a href="contact.html" class="sticky-cta">Apply Now</a>
-<a href="https://wa.me/0000000000" class="whatsapp">W</a>
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+function applyJob(country, job) {
+  localStorage.setItem("selectedCountry", country);
+  localStorage.setItem("selectedJob", job);
+  window.location.href = "contact.html";
+}
 
-  const jobsContainer = document.getElementById("jobsContainer");
+/* Simple countdown system */
+function setCountdown(elementId, deadline) {
+  const endDate = new Date(deadline).getTime();
+  const now = new Date().getTime();
+  const distance = endDate - now;
 
-  const jobs = [
-    {
-      id: "IL-SF-1024",
-      title: "Steel Fixer",
-      country: "Israel",
-      salary: "₹1,50,000 – ₹1,80,000 per month",
-      slots: 12,
-      deadline: "2026-12-31",
-      featured: true
-    },
-    {
-      id: "IL-CM-2041",
-      title: "Car Mechanic",
-      country: "Israel",
-      salary: "₹1,20,000 – ₹1,60,000 per month",
-      slots: 8,
-      deadline: "2026-10-15",
-      featured: false
-    },
-    {
-      id: "CZ-WH-3302",
-      title: "Warehouse Worker",
-      country: "Czech Republic",
-      salary: "€1,300 – €1,600 per month",
-      slots: 15,
-      deadline: "2026-09-30",
-      featured: false
-    },
-    {
-      id: "MT-CB-4411",
-      title: "Car Body Sprayer",
-      country: "Malta",
-      salary: "€1,800 – €2,200 per month",
-      slots: 5,
-      deadline: "2026-11-20",
-      featured: true
-    }
-  ];
+  const days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
 
-  jobs.forEach(function(job) {
+  document.getElementById(elementId).innerText =
+    "Application closes in " + days + " days";
+}
 
-    const deadline = new Date(job.deadline);
-    const now = new Date();
-    const diff = deadline - now;
-    const daysLeft = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    if (job.featured) {
-      card.classList.add("featured-job");
-    }
-
-    card.innerHTML = `
-      ${job.featured ? '<div class="badge-new">FEATURED</div>' : ''}
-      <h3>🌍 ${job.country} – ${job.title}</h3>
-      <p><strong>Job ID:</strong> ${job.id}</p>
-      <p><strong>Salary:</strong> ${job.salary}</p>
-      <p class="slots">Only ${job.slots} positions left</p>
-      <p class="countdown">Application closes in ${daysLeft} days</p>
-      <button class="btn job-apply"
-        data-country="${job.country}"
-        data-job="${job.title}">
-        Apply Now
-      </button>
-    `;
-
-    jobsContainer.appendChild(card);
-  });
-
-  // Apply button logic (clean and safe)
-  document.querySelectorAll(".job-apply").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      const country = this.getAttribute("data-country");
-      const job = this.getAttribute("data-job");
-
-      localStorage.setItem("selectedCountry", country);
-      localStorage.setItem("selectedJob", job);
-      window.location.href = "contact.html";
-    });
-  });
-
-});
+setCountdown("countdown1", "2026-12-31");
+setCountdown("countdown2", "2026-10-15");
+setCountdown("countdown3", "2026-09-30");
+setCountdown("countdown4", "2026-11-20");
 </script>
 
 </body>
