@@ -22,10 +22,7 @@
 
 <section class="section">
   <h2>Live International Job Openings</h2>
-  <p>
-    All roles are legally verified, contract-based,
-    and employer-approved.
-  </p>
+  <p>All positions are legally verified and employer-approved.</p>
 </section>
 
 <section class="section">
@@ -83,12 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-  jobs.forEach(job => {
+  jobs.forEach(function(job) {
 
     const deadline = new Date(job.deadline);
     const now = new Date();
     const diff = deadline - now;
-    const daysLeft = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const daysLeft = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
 
     const card = document.createElement("div");
     card.className = "card";
@@ -104,8 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
       <p><strong>Salary:</strong> ${job.salary}</p>
       <p class="slots">Only ${job.slots} positions left</p>
       <p class="countdown">Application closes in ${daysLeft} days</p>
-      <button class="btn"
-        onclick="applyJob('${job.country}','${job.title}')">
+      <button class="btn job-apply"
+        data-country="${job.country}"
+        data-job="${job.title}">
         Apply Now
       </button>
     `;
@@ -113,13 +111,19 @@ document.addEventListener("DOMContentLoaded", function () {
     jobsContainer.appendChild(card);
   });
 
-});
+  // Apply button logic (clean and safe)
+  document.querySelectorAll(".job-apply").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      const country = this.getAttribute("data-country");
+      const job = this.getAttribute("data-job");
 
-function applyJob(country, job) {
-  localStorage.setItem("selectedCountry", country);
-  localStorage.setItem("selectedJob", job);
-  window.location.href = "contact.html";
-}
+      localStorage.setItem("selectedCountry", country);
+      localStorage.setItem("selectedJob", job);
+      window.location.href = "contact.html";
+    });
+  });
+
+});
 </script>
 
 </body>
