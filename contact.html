@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact OSTC | Overseas Recruitment</title>
+<title>Contact OSTC</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,41 +19,26 @@
   </nav>
 </header>
 
-<!-- PAGE INTRO -->
-<section class="section reveal">
+<section class="section">
   <h2>Contact On Service Travel Consultants</h2>
-  <p>
-    Whether you are an international employer seeking manpower
-    or a candidate ready for overseas employment,
-    our team will assist you professionally and legally.
-  </p>
 </section>
 
-<!-- HEAD OFFICE -->
-<section class="section reveal">
-  <h2>Head Office – Rajkot</h2>
-
+<section class="section">
   <div class="card">
-    <p><strong>Address:</strong><br>
-    Everest House,<br>
-    Between Mavdi & Gondal Circle,<br>
-    150 Feet Ring Road,<br>
-    Rajkot, Gujarat – 360004, India</p>
-
-    <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
-    <p><strong>Email:</strong> info@ostcglobal.com</p>
-
-    <p><strong>Working Hours:</strong><br>
-    Monday – Saturday | 10:00 AM – 7:00 PM (IST)</p>
+    <h3>Head Office – Rajkot</h3>
+    <p>
+      Everest House,<br>
+      Between Mavdi & Gondal Circle,<br>
+      150 Feet Ring Road,<br>
+      Rajkot, Gujarat – 360004, India
+    </p>
   </div>
 </section>
 
-<!-- EMPLOYER FORM -->
-<section class="section reveal">
+<section class="section">
   <h2>Employer Inquiry Form</h2>
 
   <form id="employerForm" class="card">
-
     <input type="text" placeholder="First Name" required>
     <input type="text" placeholder="Surname" required>
     <input type="text" placeholder="Company Name" required>
@@ -61,8 +46,7 @@
     <input type="email" placeholder="Email Address" required>
     <input type="text" placeholder="Types of Workers Needed" required>
     <input type="number" placeholder="Number of Workers Required" required>
-    <textarea placeholder="Additional Information" rows="4" required></textarea>
-
+    <textarea placeholder="Additional Information" required></textarea>
     <button type="submit" class="btn">Send Inquiry</button>
   </form>
 
@@ -71,12 +55,10 @@
   </div>
 </section>
 
-<!-- WORKER FORM -->
-<section class="section reveal">
+<section class="section">
   <h2>Worker Application Form</h2>
 
   <form id="workerForm" class="card">
-
     <input type="text" placeholder="Full Name (As per Passport)" required>
     <input type="text" placeholder="Education Qualification" required>
     <input type="number" placeholder="Age" required>
@@ -86,10 +68,10 @@
     <input type="text" id="jobPosition" placeholder="Position Applying For" required>
     <input type="text" id="jobCountry" placeholder="Country Applying For" required>
 
-    <label style="margin-top:15px;">Upload Photo of Passport</label>
+    <label>Upload Passport Copy</label>
     <input type="file" required>
 
-    <label style="margin-top:15px;">Upload Aadhaar Card Copy</label>
+    <label>Upload Aadhaar Card Copy</label>
     <input type="file" required>
 
     <button type="submit" class="btn">Submit Application</button>
@@ -101,29 +83,18 @@
 </section>
 
 <footer>
-  © 2026 On Service Travel Consultants (OSTC) | Rajkot, Gujarat, India
+  © 2026 OSTC | Rajkot, Gujarat
 </footer>
 
-<a href="contact.html" class="sticky-cta">Apply Now</a>
-<a href="https://wa.me/0000000000" class="whatsapp">W</a>
+<script src="script.js"></script>
 
 <script>
-/* ===== AUTO-FILL FROM JOB BUTTON ===== */
+/* SAFE FORM HANDLING */
 document.addEventListener("DOMContentLoaded", function(){
 
-  const savedCountry = localStorage.getItem("selectedCountry");
-  const savedJob = localStorage.getItem("selectedJob");
-
-  if (savedCountry && document.getElementById("jobCountry")) {
-    document.getElementById("jobCountry").value = savedCountry;
-  }
-
-  if (savedJob && document.getElementById("jobPosition")) {
-    document.getElementById("jobPosition").value = savedJob;
-  }
-
-  /* ===== EMPLOYER FORM SUCCESS ===== */
   const employerForm = document.getElementById("employerForm");
+  const workerForm = document.getElementById("workerForm");
+
   if (employerForm) {
     employerForm.addEventListener("submit", function(e){
       e.preventDefault();
@@ -132,14 +103,24 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 
-  /* ===== WORKER FORM SUCCESS ===== */
-  const workerForm = document.getElementById("workerForm");
   if (workerForm) {
     workerForm.addEventListener("submit", function(e){
       e.preventDefault();
       document.getElementById("workerSuccess").style.display = "block";
       workerForm.reset();
     });
+  }
+
+  /* AUTO-FILL FROM JOB BUTTON */
+  const savedCountry = localStorage.getItem("selectedCountry");
+  const savedJob = localStorage.getItem("selectedJob");
+
+  if (savedCountry) {
+    document.getElementById("jobCountry").value = savedCountry;
+  }
+
+  if (savedJob) {
+    document.getElementById("jobPosition").value = savedJob;
   }
 
 });
