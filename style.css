@@ -1,5 +1,5 @@
 /* ================================
-   OSTC PROFESSIONAL LIGHT SYSTEM
+   OSTC LIGHT + STRONG GOLD GLOW
 ================================ */
 
 /* Google Fonts */
@@ -68,7 +68,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* ===== Hero Section ===== */
+/* ===== Hero ===== */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -149,28 +149,65 @@ nav a:hover::after {
   font-size: 32px;
 }
 
-/* ===== Cards (Professional Clean Version) ===== */
-.card {
-  padding: 30px;
-  border-radius: 14px;
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: #d4af37;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-}
-
-/* ===== Grid ===== */
+/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   padding: 60px 10%;
+}
+
+/* ===================================
+   STRONG INFINITE GOLD GLOW CARD
+=================================== */
+
+.card {
+  position: relative;
+  padding: 30px;
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.3s ease;
+}
+
+/* Animated glowing border */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 22px;
+  background: linear-gradient(
+    45deg,
+    #d4af37,
+    #f5e29a,
+    #d4af37,
+    #b8860b,
+    #d4af37
+  );
+  background-size: 400% 400%;
+  animation: goldGlow 6s linear infinite;
+  z-index: -2;
+  filter: blur(8px);
+}
+
+/* White inner layer */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 16px;
+  background: #ffffff;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+@keyframes goldGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
 }
 
 /* ===== Timeline ===== */
@@ -224,18 +261,6 @@ nav a:hover::after {
   padding: 0 20px;
   background: #f5f7fa;
   border-radius: 0 0 8px 8px;
-}
-
-/* ===== Scroll Reveal ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ===== Counter ===== */
