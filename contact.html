@@ -4,333 +4,206 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact OSTC</title>
-
-<style>
-
-/* =====================
-   GLOBAL
-===================== */
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
-  color: white;
-}
-
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-h2 {
-  margin-bottom: 40px;
-}
-
-/* =====================
-   GLASS FORM
-===================== */
-
-.modern-form {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 50px;
-  border-radius: 25px;
-  box-shadow: 0 25px 80px rgba(0,0,0,0.6);
-  max-width: 900px;
-  margin: auto;
-  transition: 0.6s ease;
-}
-
-.form-group {
-  position: relative;
-  margin-bottom: 25px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 18px;
-  border-radius: 14px;
-  border: 1px solid #333;
-  background: #1a1a1a;
-  color: white;
-  font-size: 16px;
-  outline: none;
-  transition: 0.3s;
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #d4af37;
-  box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
-}
-
-/* BUTTON */
-
-.modern-btn {
-  padding: 16px 40px;
-  border-radius: 50px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  background: linear-gradient(135deg,#d4af37,#b8902c);
-  color: black;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 20px;
-}
-
-.modern-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(212,175,55,0.3);
-}
-
-/* =====================
-   MULTI STEP
-===================== */
-
-.form-step {
-  display: none;
-}
-
-.form-step.active {
-  display: block;
-}
-
-/* =====================
-   CUSTOM FILE
-===================== */
-
-.custom-file {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.custom-file input {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.custom-file label {
-  display: block;
-  padding: 20px;
-  border-radius: 15px;
-  border: 2px dashed #d4af37;
-  background: rgba(255,255,255,0.03);
-  transition: 0.3s;
-}
-
-.custom-file label:hover {
-  background: rgba(212,175,55,0.1);
-}
-
-/* =====================
-   LOADER
-===================== */
-
-.loader {
-  display: none;
-  width: 18px;
-  height: 18px;
-  border: 3px solid black;
-  border-top: 3px solid transparent;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-
-/* =====================
-   SUCCESS MESSAGE
-===================== */
-
-.big-success {
-  display: none;
-  text-align: center;
-  font-size: 40px;
-  font-weight: bold;
-  padding: 120px 20px;
-  color: #d4af37;
-  animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
-}
-
-/* =====================
-   SCROLL REVEAL
-===================== */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: 1s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<section class="section reveal">
-  <h2>Worker Application</h2>
+<header>
+  <div class="logo">OSTC</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="countries.html">Countries</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <form id="workerForm" class="modern-form">
-
-    <!-- STEP 1 -->
-    <div class="form-step active">
-      <h3>Personal Details</h3>
-
-      <div class="form-group">
-        <input type="text" placeholder="Full Name (As per Passport)" required>
-      </div>
-
-      <div class="form-group">
-        <input type="number" placeholder="Age" required>
-      </div>
-
-      <div class="form-group">
-        <input type="text" placeholder="Education Qualification" required>
-      </div>
-
-      <button type="button" class="modern-btn next-btn">Next</button>
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="form-step">
-      <h3>Contact & Job</h3>
-
-      <div class="form-group">
-        <input type="tel" placeholder="Mobile Number" required>
-      </div>
-
-      <div class="form-group">
-        <input type="email" placeholder="Email Address" required>
-      </div>
-
-      <div class="form-group">
-        <input type="text" placeholder="Position Applying For" required>
-      </div>
-
-      <div class="form-group">
-        <input type="text" placeholder="Country Applying For" required>
-      </div>
-
-      <button type="button" class="modern-btn back-btn">Back</button>
-      <button type="button" class="modern-btn next-btn">Next</button>
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="form-step">
-      <h3>Documents Upload</h3>
-
-      <div class="custom-file">
-        <input type="file" required>
-        <label>📄 Upload Passport Copy</label>
-      </div>
-
-      <div class="custom-file">
-        <input type="file" required>
-        <label>🪪 Upload Aadhaar Copy</label>
-      </div>
-
-      <button type="button" class="modern-btn back-btn">Back</button>
-
-      <button type="submit" class="modern-btn">
-        <span class="btn-text">Submit Application</span>
-        <span class="loader"></span>
-      </button>
-    </div>
-
-  </form>
-
-  <div id="finalSuccess" class="big-success">
-    OSTC WILL CONTACT YOU WITHIN 48 HOURS
-  </div>
-
+<section class="section">
+  <h2>Contact On Service Travel Consultants</h2>
 </section>
 
+<section class="section">
+  <div class="card">
+    <h3>Head Office – Rajkot</h3>
+    <p>
+      Everest House,<br>
+      Between Mavdi & Gondal Circle,<br>
+      150 Feet Ring Road,<br>
+      Rajkot, Gujarat – 360004, India
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Employer Inquiry Form</h2>
+
+  <form id="employerForm" class="card">
+    <input type="text" placeholder="First Name" required>
+    <input type="text" placeholder="Surname" required>
+    <input type="text" placeholder="Company Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="text" placeholder="Types of Workers Needed" required>
+    <input type="number" placeholder="Number of Workers Required" required>
+    <textarea placeholder="Additional Information" required></textarea>
+    <button type="submit" class="btn">Send Inquiry</button>
+  </form>
+
+  <div id="employerSuccess" style="display:none; margin-top:20px; color:#d4af37;">
+    OSTC will contact you within 48 hours.
+  </div>
+</section>
+
+<section class="section">
+  <h2>Worker Application Form</h2>
+
+  <form id="workerForm" class="card">
+    <input type="text" placeholder="Full Name (As per Passport)" required>
+    <input type="text" placeholder="Education Qualification" required>
+    <input type="number" placeholder="Age" required>
+    <input type="tel" placeholder="Mobile Number" required>
+    <input type="email" placeholder="Email Address" required>
+
+    <input type="text" id="jobPosition" placeholder="Position Applying For" required>
+    <input type="text" id="jobCountry" placeholder="Country Applying For" required>
+
+    <label>Upload Passport Copy</label>
+    <input type="file" required>
+
+    <label>Upload Aadhaar Card Copy</label>
+    <input type="file" required>
+
+    <button type="submit" class="btn">Submit Application</button>
+  </form>
+
+  <div id="workerSuccess" style="display:none; margin-top:20px; color:#d4af37;">
+    OSTC will contact you within 48 hours.
+  </div>
+</section>
+
+<footer class="main-footer">
+
+  <div class="footer-container">
+
+    <!-- LEFT BRAND COLUMN -->
+    <div class="footer-brand">
+      <h3>On Service Travel Consultants</h3>
+      <p>Global Workforce Recruitment & Deployment</p>
+      <p>🇮🇳 Based in India, hiring globally</p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>Overseas Recruitment</li>
+        <li>Trade Testing</li>
+        <li>Visa Processing</li>
+        <li>Employer Workforce Solutions</li>
+        <li>Pre-Departure Orientation</li>
+      </ul>
+    </div>
+
+    <!-- INDUSTRIES -->
+    <div class="footer-col">
+      <h4>Industries</h4>
+      <ul>
+        <li>Construction</li>
+        <li>Manufacturing</li>
+        <li>Logistics</li>
+        <li>Automotive</li>
+        <li>Agriculture</li>
+      </ul>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="countries.html">Countries</a></li>
+        <li><a href="jobs.html">Vacancies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+
+      <div class="contact-row">
+        <div>
+          <strong>Email</strong>
+          <p><a href="mailto:info@onservicetravel.com">info@onservicetravel.com</a></p>
+        </div>
+
+        <div>
+          <strong>Phone</strong>
+          <p><a href="tel:+919624001714">+91 9624001714</a></p>
+        </div>
+      </div>
+
+      <div class="footer-address">
+        <strong>Head Office:</strong>
+        <p>
+          “Everest House”<br>
+          Between Mavdi Circle & Gondal Circle,<br>
+          150 Feet Ring Road,<br>
+          Rajkot – 360 004,<br>
+          Gujarat, India
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 On Service Travel Consultants (OSTC) | Ethical & Legal Overseas Recruitment
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
 <script>
+/* SAFE FORM HANDLING */
+document.addEventListener("DOMContentLoaded", function(){
 
-/* SCROLL REVEAL */
-function revealOnScroll() {
-  const reveals = document.querySelectorAll(".reveal");
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-}
-window.addEventListener("scroll", revealOnScroll);
+  const employerForm = document.getElementById("employerForm");
+  const workerForm = document.getElementById("workerForm");
 
-/* MULTI STEP */
-const steps = document.querySelectorAll(".form-step");
-const nextBtns = document.querySelectorAll(".next-btn");
-const backBtns = document.querySelectorAll(".back-btn");
-let currentStep = 0;
+  if (employerForm) {
+    employerForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("employerSuccess").style.display = "block";
+      employerForm.reset();
+    });
+  }
 
-function showStep(index){
-  steps.forEach(step => step.classList.remove("active"));
-  steps[index].classList.add("active");
-}
+  if (workerForm) {
+    workerForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("workerSuccess").style.display = "block";
+      workerForm.reset();
+    });
+  }
 
-nextBtns.forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    if(currentStep < steps.length-1){
-      currentStep++;
-      showStep(currentStep);
-    }
-  });
+  /* AUTO-FILL FROM JOB BUTTON */
+  const savedCountry = localStorage.getItem("selectedCountry");
+  const savedJob = localStorage.getItem("selectedJob");
+
+  if (savedCountry) {
+    document.getElementById("jobCountry").value = savedCountry;
+  }
+
+  if (savedJob) {
+    document.getElementById("jobPosition").value = savedJob;
+  }
+
 });
-
-backBtns.forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    if(currentStep>0){
-      currentStep--;
-      showStep(currentStep);
-    }
-  });
-});
-
-/* SUBMIT */
-const workerForm = document.getElementById("workerForm");
-const loader = document.querySelector(".loader");
-const btnText = document.querySelector(".btn-text");
-const successMessage = document.getElementById("finalSuccess");
-
-workerForm.addEventListener("submit", function(e){
-  e.preventDefault();
-  btnText.style.display="none";
-  loader.style.display="inline-block";
-
-  setTimeout(()=>{
-    workerForm.style.display="none";
-    successMessage.style.display="block";
-  },2000);
-});
-
 </script>
 
 </body>
