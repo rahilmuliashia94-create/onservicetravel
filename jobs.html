@@ -105,6 +105,24 @@
   margin-top: 5px;
 }
 
+.job-card {
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-benefits {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.job-card.expanded .card-benefits {
+  max-height: 200px;
+}
+
 @media (max-width: 900px) {
   .jobs-wrapper {
     grid-template-columns: 1fr;
@@ -156,39 +174,68 @@
 
     <div class="grid" id="jobGrid">
 
-      <!-- FIRST JOB (3 minute demo timer) -->
-      <div class="card job-card fade-in" data-country="Israel" data-deadline="">
+      <!-- Job Cards -->
+
+      <div class="card job-card fade-in" data-country="Israel">
         <span class="badge-featured">FEATURED</span>
         <span class="badge-urgent">URGENT</span>
         <h3>🇮🇱 Israel – Steel Fixer</h3>
         <p><strong>Job ID:</strong> IL-SF-1024</p>
         <p class="slots">Only 12 positions left</p>
         <p class="countdown"></p>
+        <div class="card-benefits">
+          ✔ Legal Work Visa<br>
+          ✔ Employment Contract<br>
+          ✔ Airport Pickup<br>
+          ✔ Accommodation Assistance<br>
+          ✔ Medical Insurance
+        </div>
         <button class="btn" onclick="applyJob('Israel','Steel Fixer')">Apply Now</button>
       </div>
 
-      <div class="card job-card fade-in" data-country="Germany" data-deadline="2026-05-01T00:00:00">
+      <div class="card job-card fade-in" data-country="Germany">
         <h3>🇩🇪 Germany – Caregiver</h3>
         <p><strong>Job ID:</strong> DE-CG-9001</p>
         <p class="slots">Only 7 positions left</p>
         <p class="countdown"></p>
+        <div class="card-benefits">
+          ✔ Legal Work Visa<br>
+          ✔ Employment Contract<br>
+          ✔ Airport Pickup<br>
+          ✔ Accommodation Assistance<br>
+          ✔ Medical Insurance
+        </div>
         <button class="btn" onclick="applyJob('Germany','Caregiver')">Apply Now</button>
       </div>
 
-      <div class="card job-card fade-in" data-country="Poland" data-deadline="2026-06-01T00:00:00">
+      <div class="card job-card fade-in" data-country="Poland">
         <span class="badge-urgent">URGENT</span>
         <h3>🇵🇱 Poland – Warehouse Worker</h3>
         <p><strong>Job ID:</strong> PL-WH-1102</p>
         <p class="slots">Only 16 positions left</p>
         <p class="countdown"></p>
+        <div class="card-benefits">
+          ✔ Legal Work Visa<br>
+          ✔ Employment Contract<br>
+          ✔ Airport Pickup<br>
+          ✔ Accommodation Assistance<br>
+          ✔ Medical Insurance
+        </div>
         <button class="btn" onclick="applyJob('Poland','Warehouse Worker')">Apply Now</button>
       </div>
 
-      <div class="card job-card fade-in" data-country="Malta" data-deadline="2026-03-01T00:00:00">
+      <div class="card job-card fade-in" data-country="Malta">
         <h3>🇲🇹 Malta – Car Mechanic</h3>
         <p><strong>Job ID:</strong> MT-CM-1201</p>
         <p class="slots">Only 4 positions left</p>
         <p class="countdown"></p>
+        <div class="card-benefits">
+          ✔ Legal Work Visa<br>
+          ✔ Employment Contract<br>
+          ✔ Airport Pickup<br>
+          ✔ Accommodation Assistance<br>
+          ✔ Medical Insurance
+        </div>
         <button class="btn" onclick="applyJob('Malta','Car Mechanic')">Apply Now</button>
       </div>
 
@@ -196,6 +243,18 @@
   </div>
 
 </div>
+</section>
+
+<!-- Worker Benefits Section -->
+<section class="section">
+  <h3>What You Get</h3>
+  <ul style="max-width:600px; margin:auto; line-height:2;">
+    <li>✔ Legal Work Visa</li>
+    <li>✔ Employment Contract Before Departure</li>
+    <li>✔ Airport Pickup</li>
+    <li>✔ Accommodation Assistance</li>
+    <li>✔ Medical Insurance</li>
+  </ul>
 </section>
 
 <footer class="main-footer">
@@ -228,42 +287,28 @@ function updateCount() {
   jobCount.innerText = visible.length + " Positions Available";
 }
 
-function applyFilters() {
+filters.forEach(f => f.addEventListener('change', () => {
   const selected = Array.from(filters).filter(f => f.checked).map(f => f.value);
-
   jobCards.forEach(card => {
-    const country = card.getAttribute('data-country');
-    if (selected.length === 0 || selected.includes(country)) {
-      card.style.display = "block";
-      card.classList.remove('fade-out');
-    } else {
-      card.classList.add('fade-out');
-      setTimeout(() => card.style.display = "none", 200);
-    }
+    const country = card.dataset.country;
+    card.style.display = (selected.length === 0 || selected.includes(country)) ? "block" : "none";
   });
-
   updateCount();
-}
+}));
 
-filters.forEach(f => f.addEventListener('change', applyFilters));
 clearBtn.addEventListener('click', () => {
   filters.forEach(f => f.checked = false);
-  applyFilters();
+  jobCards.forEach(card => card.style.display = "block");
+  updateCount();
 });
 
-sortSelect.addEventListener('change', () => {
-  const cardsArray = Array.from(jobCards);
-  if (sortSelect.value === "az") cardsArray.sort((a,b)=>a.innerText.localeCompare(b.innerText));
-  if (sortSelect.value === "newest") cardsArray.reverse();
-  cardsArray.forEach(card => jobGrid.appendChild(card));
-});
-
-/* LIVE COUNTDOWN */
+/* 10 DAY LIVE TIMER */
 function handleCountdowns() {
+  const tenDays = new Date().getTime() + (10 * 24 * 60 * 60 * 1000);
 
-  // First job expires in 3 minutes (demo)
-  const firstCard = document.querySelector('.job-card');
-  firstCard.dataset.deadline = new Date().getTime() + (3 * 60 * 1000);
+  jobCards.forEach(card => {
+    card.dataset.deadline = tenDays;
+  });
 
   function updateTimers() {
     const now = new Date().getTime();
@@ -285,10 +330,7 @@ function handleCountdowns() {
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       countdownEl.innerText =
-        days + "d " +
-        hours + "h " +
-        minutes + "m " +
-        seconds + "s";
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 
       if (distance <= 10 * 60 * 1000) {
         countdownEl.style.color = "red";
@@ -296,8 +338,6 @@ function handleCountdowns() {
         countdownEl.style.color = "";
       }
     });
-
-    updateCount();
   }
 
   updateTimers();
@@ -306,6 +346,21 @@ function handleCountdowns() {
 
 handleCountdowns();
 updateCount();
+
+/* Expand after 2s hover */
+jobCards.forEach(card => {
+  let timer;
+  card.addEventListener("mouseenter", () => {
+    timer = setTimeout(() => {
+      card.classList.add("expanded");
+    }, 2000);
+  });
+
+  card.addEventListener("mouseleave", () => {
+    clearTimeout(timer);
+    card.classList.remove("expanded");
+  });
+});
 </script>
 
 </body>
