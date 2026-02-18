@@ -46,12 +46,6 @@
 
 .job-count { font-weight: 600; color: #d4af37; }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-
 .badge-featured {
   background: #d4af37;
   color: #000;
@@ -76,46 +70,44 @@
 .countdown { font-weight: 600; margin-top: 5px; }
 
 .job-card {
-  background:#fff;
-  padding:20px;
-  border-radius:14px;
-  border:1px solid #e5e5e5;
   transition: all 0.4s ease;
-  overflow:hidden;
+  overflow: hidden;
+  position: relative;
 }
 
 .card-benefits {
-  max-height:0;
-  overflow:hidden;
-  transition:max-height 0.4s ease;
-  font-size:14px;
-  margin-top:10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
-.job-card.expanded .card-benefits { max-height:200px; }
+.job-card.expanded .card-benefits { max-height: 200px; }
 
 .pagination {
-  text-align:center;
-  margin-top:40px;
+  text-align: center;
+  margin-top: 40px;
 }
 
-.pagination button, .pagination span {
-  margin:0 6px;
-  padding:6px 12px;
-  border:1px solid #d4af37;
-  background:transparent;
-  cursor:pointer;
-  border-radius:6px;
+.pagination button,
+.pagination span {
+  margin: 0 6px;
+  padding: 6px 12px;
+  border: 1px solid #d4af37;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
 .pagination span.active {
-  background:#d4af37;
-  color:#000;
-  font-weight:700;
+  background: #d4af37;
+  color: #000;
+  font-weight: 700;
 }
 
-@media (max-width:900px){
-.jobs-wrapper{grid-template-columns:1fr;}
+@media (max-width: 900px) {
+  .jobs-wrapper { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -125,12 +117,12 @@
 <header>
 <div class="logo">OSTC</div>
 <nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Countries</a>
-<a href="#">Jobs</a>
-<a href="#">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="countries.html">Countries</a>
+<a href="jobs.html">Jobs</a>
+<a href="contact.html">Contact</a>
 </nav>
 </header>
 
@@ -155,158 +147,448 @@
 </div>
 
 <div>
-
 <div class="job-top-bar">
 <div class="job-count" id="jobCount"></div>
 </div>
 
 <div class="grid" id="jobGrid">
 
-<!-- 22 JOB CARDS -->
+<!-- ORIGINAL 4 -->
 
-<script>
-const jobData = [
-{country:"Israel",title:"Steel Fixer",salary:"₪9,000/month"},
-{country:"Germany",title:"Caregiver",salary:"€2,200/month"},
-{country:"Poland",title:"Warehouse Worker",salary:"PLN6,000/month"},
-{country:"Malta",title:"Car Mechanic",salary:"€2,000/month"},
+<div class="card job-card fade-in" data-country="Israel">
+  <span class="badge-featured">FEATURED</span>
+  <span class="badge-urgent">URGENT</span>
+  <h3>🇮🇱 Israel – Steel Fixer</h3>
+  <p><strong>Job ID:</strong> IL-SF-1024</p>
+  <p class="slots">Only 12 positions left</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">
+    ✔ Legal Work Visa<br>
+    ✔ Employment Contract<br>
+    ✔ Airport Pickup<br>
+    ✔ Accommodation Assistance<br>
+    ✔ Medical Insurance
+  </div>
+  <button class="btn" onclick="applyJob('Israel','Steel Fixer')">Apply Now</button>
+</div>
 
-{country:"Netherlands",title:"Logistics Worker",salary:"€2,200/month"},
-{country:"Netherlands",title:"Machine Operator",salary:"€2,400/month"},
-{country:"Netherlands",title:"Farm Worker",salary:"€2,000/month"},
-{country:"Netherlands",title:"Construction Labourer",salary:"€2,300/month"},
-{country:"Netherlands",title:"Hotel Housekeeping",salary:"€1,950/month"},
-{country:"Netherlands",title:"Restaurant Dishwasher",salary:"€1,900/month"},
+<div class="card job-card fade-in" data-country="Germany">
+  <h3>🇩🇪 Germany – Caregiver</h3>
+  <p><strong>Job ID:</strong> DE-CG-9001</p>
+  <p class="slots">Only 7 positions left</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">
+    ✔ Legal Work Visa<br>
+    ✔ Employment Contract<br>
+    ✔ Airport Pickup<br>
+    ✔ Accommodation Assistance<br>
+    ✔ Medical Insurance
+  </div>
+  <button class="btn" onclick="applyJob('Germany','Caregiver')">Apply Now</button>
+</div>
 
-{country:"Romania",title:"Factory Worker",salary:"€1,400/month"},
-{country:"Romania",title:"Forklift Operator",salary:"€1,600/month"},
-{country:"Romania",title:"Automotive Painter",salary:"€1,700/month"},
-{country:"Romania",title:"Warehouse Picker",salary:"€1,450/month"},
-{country:"Romania",title:"Assembly Line Worker",salary:"€1,500/month"},
-{country:"Romania",title:"Hotel Receptionist",salary:"€1,350/month"},
+<div class="card job-card fade-in" data-country="Poland">
+  <span class="badge-urgent">URGENT</span>
+  <h3>🇵🇱 Poland – Warehouse Worker</h3>
+  <p><strong>Job ID:</strong> PL-WH-1102</p>
+  <p class="slots">Only 16 positions left</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">
+    ✔ Legal Work Visa<br>
+    ✔ Employment Contract<br>
+    ✔ Airport Pickup<br>
+    ✔ Accommodation Assistance<br>
+    ✔ Medical Insurance
+  </div>
+  <button class="btn" onclick="applyJob('Poland','Warehouse Worker')">Apply Now</button>
+</div>
 
-{country:"Canada",title:"Heavy Duty Mechanic",salary:"CA$35/hr"},
-{country:"Canada",title:"Construction Labourer",salary:"CA$24/hr"},
-{country:"Canada",title:"Licensed Practical Nurse",salary:"CA$32/hr"},
-{country:"Canada",title:"Sheet Metal Worker",salary:"CA$30/hr"},
-{country:"Canada",title:"Warehouse Support",salary:"CA$22/hr"},
-{country:"Canada",title:"Dental Assistant",salary:"CA$28/hr"}
-];
-</script>
+<div class="card job-card fade-in" data-country="Malta">
+  <h3>🇲🇹 Malta – Car Mechanic</h3>
+  <p><strong>Job ID:</strong> MT-CM-1201</p>
+  <p class="slots">Only 4 positions left</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">
+    ✔ Legal Work Visa<br>
+    ✔ Employment Contract<br>
+    ✔ Airport Pickup<br>
+    ✔ Accommodation Assistance<br>
+    ✔ Medical Insurance
+  </div>
+  <button class="btn" onclick="applyJob('Malta','Car Mechanic')">Apply Now</button>
+</div>
+
+<!-- NETHERLANDS (6) -->
+
+<div class="card job-card fade-in" data-country="Netherlands">
+  <h3>🇳🇱 Netherlands – Logistics Worker</h3>
+  <p><strong>Job ID:</strong> NL-LG-1001</p>
+  <p class="slots">8 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">
+    ✔ Legal Work Visa<br>
+    ✔ Employment Contract<br>
+    ✔ Airport Pickup<br>
+    ✔ Accommodation Assistance<br>
+    ✔ Medical Insurance
+  </div>
+  <button class="btn" onclick="applyJob('Netherlands','Logistics Worker')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Netherlands">
+  <h3>Machine Operator</h3>
+  <p><strong>Job ID:</strong> NL-MO-1002</p>
+  <p class="slots">6 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Netherlands','Machine Operator')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Netherlands">
+  <h3>Farm Worker</h3>
+  <p><strong>Job ID:</strong> NL-FW-1003</p>
+  <p class="slots">10 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Netherlands','Farm Worker')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Netherlands">
+  <h3>Construction Labourer</h3>
+  <p><strong>Job ID:</strong> NL-CL-1004</p>
+  <p class="slots">5 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Netherlands','Construction Labourer')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Netherlands">
+  <h3>Hotel Housekeeping</h3>
+  <p><strong>Job ID:</strong> NL-HK-1005</p>
+  <p class="slots">12 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Netherlands','Hotel Housekeeping')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Netherlands">
+  <h3>Restaurant Dishwasher</h3>
+  <p><strong>Job ID:</strong> NL-RD-1006</p>
+  <p class="slots">9 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Netherlands','Restaurant Dishwasher')">Apply Now</button>
+</div>
+
+<!-- ROMANIA (6) -->
+
+<div class="card job-card fade-in" data-country="Romania">
+  <h3>🇷🇴 Romania – Factory Worker</h3>
+  <p><strong>Job ID:</strong> RO-FW-2001</p>
+  <p class="slots">15 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Romania','Factory Worker')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Romania">
+  <h3>Forklift Operator</h3>
+  <p><strong>Job ID:</strong> RO-FO-2002</p>
+  <p class="slots">7 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Romania','Forklift Operator')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Romania">
+  <h3>Automotive Painter</h3>
+  <p><strong>Job ID:</strong> RO-AP-2003</p>
+  <p class="slots">6 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Romania','Automotive Painter')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Romania">
+  <h3>Warehouse Picker</h3>
+  <p><strong>Job ID:</strong> RO-WP-2004</p>
+  <p class="slots">11 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Romania','Warehouse Picker')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Romania">
+  <h3>Assembly Line Worker</h3>
+  <p><strong>Job ID:</strong> RO-AL-2005</p>
+  <p class="slots">13 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Romania','Assembly Line Worker')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Romania">
+  <h3>Hotel Receptionist</h3>
+  <p><strong>Job ID:</strong> RO-HR-2006</p>
+  <p class="slots">5 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ Legal Work Visa<br>✔ Employment Contract<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Romania','Hotel Receptionist')">Apply Now</button>
+</div>
+
+<!-- CANADA (6) -->
+
+<div class="card job-card fade-in" data-country="Canada">
+  <h3>🇨🇦 Canada – Heavy Duty Mechanic</h3>
+  <p><strong>Job ID:</strong> CA-HM-3001</p>
+  <p class="slots">4 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ LMIA Approved Employer<br>✔ Work Permit Support<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Canada','Heavy Duty Mechanic')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Canada">
+  <h3>Construction Labourer</h3>
+  <p><strong>Job ID:</strong> CA-CL-3002</p>
+  <p class="slots">9 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ LMIA Approved Employer<br>✔ Work Permit Support<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Canada','Construction Labourer')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Canada">
+  <h3>Licensed Practical Nurse</h3>
+  <p><strong>Job ID:</strong> CA-LPN-3003</p>
+  <p class="slots">3 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ LMIA Approved Employer<br>✔ Work Permit Support<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Canada','Licensed Practical Nurse')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Canada">
+  <h3>Sheet Metal Worker</h3>
+  <p><strong>Job ID:</strong> CA-SM-3004</p>
+  <p class="slots">6 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ LMIA Approved Employer<br>✔ Work Permit Support<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Canada','Sheet Metal Worker')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Canada">
+  <h3>Warehouse Support</h3>
+  <p><strong>Job ID:</strong> CA-WS-3005</p>
+  <p class="slots">10 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ LMIA Approved Employer<br>✔ Work Permit Support<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Canada','Warehouse Support')">Apply Now</button>
+</div>
+
+<div class="card job-card fade-in" data-country="Canada">
+  <h3>Dental Assistant</h3>
+  <p><strong>Job ID:</strong> CA-DA-3006</p>
+  <p class="slots">5 positions available</p>
+  <p class="countdown"></p>
+  <div class="card-benefits">✔ LMIA Approved Employer<br>✔ Work Permit Support<br>✔ Airport Pickup<br>✔ Accommodation Assistance<br>✔ Medical Insurance</div>
+  <button class="btn" onclick="applyJob('Canada','Dental Assistant')">Apply Now</button>
+</div>
 
 </div>
 
-<div class="pagination" id="pagination"></div>
+<div class="pagination"></div>
 
 </div>
 </div>
 </section>
 
-<script>
-const jobGrid=document.getElementById("jobGrid");
-const filters=document.querySelectorAll(".country-filter");
-const clearBtn=document.getElementById("clearFilters");
-const jobCount=document.getElementById("jobCount");
-const pagination=document.getElementById("pagination");
+<section class="section">
+<h3>What You Get</h3>
+<ul style="max-width:600px; margin:auto; line-height:2;">
+<li>✔ Legal Work Visa</li>
+<li>✔ Employment Contract Before Departure</li>
+<li>✔ Airport Pickup</li>
+<li>✔ Accommodation Assistance</li>
+<li>✔ Medical Insurance</li>
+</ul>
+</section>
 
-const jobsPerPage=6;
-let currentPage=1;
-let filteredJobs=[...jobData];
-
-function renderJobs(){
-jobGrid.innerHTML="";
-const start=(currentPage-1)*jobsPerPage;
-const end=start+jobsPerPage;
-filteredJobs.slice(start,end).forEach(job=>{
-const card=document.createElement("div");
-card.className="job-card";
-card.dataset.country=job.country;
-card.innerHTML=`
-<h3>🌍 ${job.country} – ${job.title}</h3>
-<p><strong>Salary:</strong> ${job.salary}</p>
-<p class="countdown"></p>
-<div class="card-benefits">
-✔ Legal Work Visa<br>
-✔ Employment Contract<br>
-✔ Airport Pickup<br>
-✔ Accommodation Assistance<br>
-✔ Medical Insurance
+<footer class="main-footer">
+<div class="footer-container">
+<div class="footer-brand">
+<h3>On Service Travel Consultants</h3>
+<p>Global Workforce Recruitment & Deployment</p>
+<p>🇮🇳 Based in India, hiring globally</p>
 </div>
-<button class="btn">Apply Now</button>
-`;
-card.addEventListener("mouseenter",()=>{
-card.classList.add("expanded");
-});
-card.addEventListener("mouseleave",()=>{
-card.classList.remove("expanded");
-});
-jobGrid.appendChild(card);
-});
-updateCount();
-renderPagination();
-handleCountdowns();
+</div>
+<div class="footer-bottom">© 2026 OSTC</div>
+</footer>
+
+<script>
+function applyJob(country, job) {
+  localStorage.setItem("selectedCountry", country);
+  localStorage.setItem("selectedJob", job);
+  window.location.href = "contact.html";
 }
 
-function updateCount(){
-jobCount.innerText=filteredJobs.length+" Positions Available";
+const filters = document.querySelectorAll('.country-filter');
+const jobCards = Array.from(document.querySelectorAll('.job-card'));
+const jobCount = document.getElementById('jobCount');
+const clearBtn = document.getElementById('clearFilters');
+const sortSelect = document.getElementById('sortSelect');
+const jobGrid = document.getElementById('jobGrid');
+
+/* PAGINATION VARIABLES */
+const jobsPerPage = 6;
+let currentPage = 1;
+let filteredJobs = [...jobCards];
+
+/* UPDATE COUNT */
+function updateCount() {
+  jobCount.innerText = filteredJobs.length + " Positions Available";
 }
 
-function renderPagination(){
-pagination.innerHTML="";
-const totalPages=Math.ceil(filteredJobs.length/jobsPerPage);
+/* RENDER JOBS BASED ON PAGE */
+function renderJobs() {
+  jobCards.forEach(card => card.style.display = "none");
 
-const prev=document.createElement("button");
-prev.innerText="Previous";
-prev.disabled=currentPage===1;
-prev.onclick=()=>{currentPage--;renderJobs();};
-pagination.appendChild(prev);
+  const start = (currentPage - 1) * jobsPerPage;
+  const end = start + jobsPerPage;
 
-for(let i=1;i<=totalPages;i++){
-const page=document.createElement("span");
-page.innerText=i;
-if(i===currentPage)page.classList.add("active");
-page.onclick=()=>{currentPage=i;renderJobs();};
-pagination.appendChild(page);
+  filteredJobs.slice(start, end).forEach(card => {
+    card.style.display = "block";
+  });
+
+  updateCount();
+  renderPagination();
 }
 
-const next=document.createElement("button");
-next.innerText="Next";
-next.disabled=currentPage===totalPages;
-next.onclick=()=>{currentPage++;renderJobs();};
-pagination.appendChild(next);
+/* RENDER PAGINATION */
+function renderPagination() {
+  let pagination = document.querySelector('.pagination');
+  if (!pagination) {
+    pagination = document.createElement("div");
+    pagination.className = "pagination";
+    jobGrid.parentNode.appendChild(pagination);
+  }
+
+  pagination.innerHTML = "";
+
+  const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+
+  const prevBtn = document.createElement("button");
+  prevBtn.innerText = "Previous";
+  prevBtn.disabled = currentPage === 1;
+  prevBtn.onclick = () => {
+    currentPage--;
+    renderJobs();
+  };
+  pagination.appendChild(prevBtn);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const pageBtn = document.createElement("span");
+    pageBtn.innerText = i;
+    if (i === currentPage) pageBtn.classList.add("active");
+    pageBtn.onclick = () => {
+      currentPage = i;
+      renderJobs();
+    };
+    pagination.appendChild(pageBtn);
+  }
+
+  const nextBtn = document.createElement("button");
+  nextBtn.innerText = "Next";
+  nextBtn.disabled = currentPage === totalPages;
+  nextBtn.onclick = () => {
+    currentPage++;
+    renderJobs();
+  };
+  pagination.appendChild(nextBtn);
 }
 
-filters.forEach(f=>f.addEventListener("change",()=>{
-const selected=[...filters].filter(x=>x.checked).map(x=>x.value);
-filteredJobs=jobData.filter(job=>selected.length===0||selected.includes(job.country));
-currentPage=1;
-renderJobs();
+/* FILTERING */
+filters.forEach(f => f.addEventListener('change', () => {
+  const selected = Array.from(filters)
+    .filter(f => f.checked)
+    .map(f => f.value);
+
+  filteredJobs = jobCards.filter(card => {
+    return selected.length === 0 || selected.includes(card.dataset.country);
+  });
+
+  currentPage = 1;
+  renderJobs();
 }));
 
-clearBtn.addEventListener("click",()=>{
-filters.forEach(f=>f.checked=false);
-filteredJobs=[...jobData];
-currentPage=1;
-renderJobs();
+clearBtn.addEventListener('click', () => {
+  filters.forEach(f => f.checked = false);
+  filteredJobs = [...jobCards];
+  currentPage = 1;
+  renderJobs();
 });
 
-function handleCountdowns(){
-const tenDays=new Date().getTime()+(10*24*60*60*1000);
-document.querySelectorAll(".countdown").forEach(el=>{
-el.dataset.deadline=tenDays;
-});
-setInterval(()=>{
-const now=new Date().getTime();
-document.querySelectorAll(".countdown").forEach(el=>{
-const distance=el.dataset.deadline-now;
-if(distance<=0){el.innerText="Application Closed";return;}
-const days=Math.floor(distance/(1000*60*60*24));
-const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-el.innerText=days+"d "+hours+"h";
-});
-},1000);
+/* 10 DAY LIVE TIMER */
+function handleCountdowns() {
+  const tenDays = new Date().getTime() + (10 * 24 * 60 * 60 * 1000);
+
+  jobCards.forEach(card => {
+    card.dataset.deadline = tenDays;
+  });
+
+  function updateTimers() {
+    const now = new Date().getTime();
+
+    jobCards.forEach(card => {
+      const countdownEl = card.querySelector('.countdown');
+      if (!countdownEl) return;
+
+      const deadline = parseInt(card.dataset.deadline);
+      const distance = deadline - now;
+
+      if (distance <= 0) {
+        countdownEl.innerText = "Application Closed";
+        countdownEl.style.color = "red";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerText =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+      if (distance <= 10 * 60 * 1000) {
+        countdownEl.style.color = "red";
+      } else {
+        countdownEl.style.color = "";
+      }
+    });
+  }
+
+  updateTimers();
+  setInterval(updateTimers, 1000);
 }
 
+/* EXPAND AFTER 2s HOVER */
+function applyHoverExpand() {
+  jobCards.forEach(card => {
+    let timer;
+    card.addEventListener("mouseenter", () => {
+      timer = setTimeout(() => {
+        card.classList.add("expanded");
+      }, 2000);
+    });
+
+    card.addEventListener("mouseleave", () => {
+      clearTimeout(timer);
+      card.classList.remove("expanded");
+    });
+  });
+}
+
+/* INITIALIZE */
+handleCountdowns();
+applyHoverExpand();
 renderJobs();
 </script>
 
