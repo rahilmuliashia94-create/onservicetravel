@@ -5,40 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jobs | OSTC International Recruitment</title>
 
-<meta name="description" content="Verified overseas jobs in Israel, Czech Republic and Malta. Ethical recruitment. Legal work permits.">
-
-<!-- Google Job Schema Example -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "JobPosting",
- "title": "Steel Fixer",
- "employmentType": "FULL_TIME",
- "hiringOrganization": {
-   "@type": "Organization",
-   "name": "Levant Infrastructure Ltd"
- },
- "jobLocation": {
-   "@type": "Place",
-   "address": {
-     "@type": "PostalAddress",
-     "addressCountry": "IL"
-   }
- }
-}
-</script>
+<meta name="description" content="Apply for overseas jobs in Israel, Czech Republic, and Malta. Verified employers. Legal visa processing.">
+<meta name="keywords" content="Overseas Jobs, Israel Jobs, Malta Jobs, Czech Jobs">
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#0b1c2d,#133b5c);
+  background: #f5f7fa;
   color: #222;
 }
 
-/* HEADER */
 header {
-  background: rgba(0,0,0,0.7);
+  background: #0b1c2d;
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
@@ -57,112 +36,101 @@ nav a {
   margin-left: 20px;
 }
 
-/* HERO */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
+  background: linear-gradient(135deg, #0b1c2d, #133b5c);
   color: white;
+  padding: 70px 20px;
+  text-align: center;
 }
 
-.hero h1 {
-  font-size: 36px;
-}
-
-/* SECTION */
 .section {
-  padding: 60px 20px;
+  padding: 50px 20px;
   max-width: 1100px;
   margin: auto;
-  background: white;
-  border-radius: 15px;
-  margin-top: 30px;
 }
 
-/* FILTER */
-.filters {
+.section h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-select {
-  padding: 8px;
-  margin: 5px;
-}
-
-/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
 }
 
-/* GLASS CARD */
 .card {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
+  background: white;
   padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: 0.4s;
-  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
 }
 
-/* VERIFIED BADGE */
-.badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #2ecc71;
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #0b1c2d;
   color: white;
-  padding: 4px 8px;
-  font-size: 11px;
+  text-decoration: none;
   border-radius: 5px;
-  cursor: pointer;
 }
 
-/* COUNTDOWN COLORS */
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 15px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
 .countdown {
   font-weight: bold;
+  color: #c0392b;
   margin-top: 8px;
 }
 
-.orange { color: orange; }
-.red { color: red; animation: pulse 1s infinite; }
-
-@keyframes pulse {
-  0% {opacity:1;}
-  50% {opacity:0.5;}
-  100% {opacity:1;}
+.process ol {
+  max-width: 600px;
+  margin: auto;
+  line-height: 2;
 }
 
-/* EXPAND */
-.details {
-  display: none;
-  margin-top: 10px;
-  font-size: 14px;
+.benefits ul {
+  max-width: 600px;
+  margin: auto;
+  line-height: 2;
 }
 
-/* Sticky WhatsApp */
-.sticky {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-/* Compliance */
 .compliance {
+  background: #e9eef5;
+  padding: 40px 20px;
+  text-align: center;
   font-size: 14px;
-  line-height: 1.6;
+}
+
+footer {
+  background: #0b1c2d;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
 }
 </style>
 </head>
@@ -173,122 +141,141 @@ select {
   <div class="logo">OSTC International Recruitment</div>
   <nav>
     <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="countries.html">Countries</a>
+    <a href="jobs.html">Jobs</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>🌍 Verified International Jobs</h1>
-  <p>Ethical Recruitment | Legal Deployment | Transparent Process</p>
+  <h1>Work Abroad with Verified Employers</h1>
+  <p>Licensed Overseas Recruitment | Ethical & Legal Deployment</p>
 </section>
 
 <section class="section">
+  <h2>Current International Vacancies</h2>
 
-<div class="filters">
-<select id="countryFilter" onchange="filterJobs()">
-<option value="all">All Countries</option>
-<option value="Israel">Israel</option>
-<option value="Czech">Czech</option>
-<option value="Malta">Malta</option>
-</select>
-</div>
+  <div class="grid">
 
-<div class="grid">
+    <div class="card">
+      <h3>Israel – Steel Fixer</h3>
+      <p><strong>Employer:</strong> Levant Infrastructure Ltd – Tel Aviv</p>
+      <p><strong>Salary:</strong> ₹1,50,000 – ₹1,80,000/month</p>
+      <p><strong>Contract:</strong> 2 Years Renewable</p>
+      <p><strong>Visa:</strong> Legal Work Permit</p>
+      <p class="countdown" id="countdown1"></p>
+      <a href="contact.html" class="btn">Apply Now</a><br>
+      <a href="https://wa.me/919624001714" class="whatsapp-btn">WhatsApp HR</a>
+    </div>
 
-<div class="card" data-country="Israel">
-<span class="badge" title="Documents verified by OSTC Compliance Team">✔ Verified</span>
-<h3>🇮🇱 Israel – Steel Fixer</h3>
-<p><strong>Salary:</strong> ₹1,50,000 – ₹1,80,000</p>
-<p class="countdown" id="cd1"></p>
-<button onclick="toggleDetails(this)">View Details</button>
-<div class="details">
-Requirements: 3+ years experience<br>
-Accommodation provided<br>
-Overtime paid separately
-</div>
-</div>
+    <div class="card">
+      <h3>Israel – Car Mechanic</h3>
+      <p><strong>Employer:</strong> Haifa Auto Engineering Co.</p>
+      <p><strong>Salary:</strong> ₹1,20,000 – ₹1,60,000/month</p>
+      <p><strong>Contract:</strong> 2 Years Renewable</p>
+      <p><strong>Visa:</strong> Legal Work Permit</p>
+      <p class="countdown" id="countdown2"></p>
+      <a href="contact.html" class="btn">Apply Now</a><br>
+      <a href="https://wa.me/919624001714" class="whatsapp-btn">WhatsApp HR</a>
+    </div>
 
-<div class="card" data-country="Czech">
-<span class="badge" title="Documents verified by OSTC Compliance Team">✔ Verified</span>
-<h3>🇨🇿 Czech – Warehouse Worker</h3>
-<p><strong>Salary:</strong> €1,300 – €1,600</p>
-<p class="countdown" id="cd2"></p>
-<button onclick="toggleDetails(this)">View Details</button>
-<div class="details">
-40 hours/week<br>
-EU Work Permit<br>
-Accommodation support
-</div>
-</div>
+    <div class="card">
+      <h3>Czech Republic – Warehouse Worker</h3>
+      <p><strong>Employer:</strong> Central Logistics Praha</p>
+      <p><strong>Salary:</strong> €1,300 – €1,600/month</p>
+      <p><strong>Contract:</strong> 2 Years</p>
+      <p><strong>Visa:</strong> EU Work Permit</p>
+      <p class="countdown" id="countdown3"></p>
+      <a href="contact.html" class="btn">Apply Now</a><br>
+      <a href="https://wa.me/919624001714" class="whatsapp-btn">WhatsApp HR</a>
+    </div>
 
-</div>
+    <div class="card">
+      <h3>Malta – Car Body Sprayer</h3>
+      <p><strong>Employer:</strong> Mediterranean Auto Works Ltd</p>
+      <p><strong>Salary:</strong> €1,800 – €2,200/month</p>
+      <p><strong>Contract:</strong> 2 Years</p>
+      <p><strong>Visa:</strong> EU Employment Permit</p>
+      <p class="countdown" id="countdown4"></p>
+      <a href="contact.html" class="btn">Apply Now</a><br>
+      <a href="https://wa.me/919624001714" class="whatsapp-btn">WhatsApp HR</a>
+    </div>
+
+  </div>
 </section>
 
-<section class="section compliance">
-<h2>Compliance & Ethical Recruitment</h2>
-<p>OSTC follows Indian overseas employment regulations.</p>
-<p>✔ MEA Guidelines Compliant</p>
-<p>✔ Anti-Fraud Policy Active</p>
-<p>✔ Official Contracts Before Departure</p>
+<section class="section process">
+  <h2>Our Recruitment Process</h2>
+  <ol>
+    <li>Application Submission</li>
+    <li>Profile Screening</li>
+    <li>Employer Interview / Trade Test</li>
+    <li>Visa Documentation</li>
+    <li>Deployment & Airport Assistance</li>
+  </ol>
 </section>
 
-<a href="https://wa.me/919624001714" class="sticky">💬</a>
+<section class="section benefits">
+  <h2>Worker Benefits</h2>
+  <ul>
+    <li>✔ Legal Work Visa</li>
+    <li>✔ Employment Contract Before Departure</li>
+    <li>✔ Medical Insurance</li>
+    <li>✔ Accommodation Assistance</li>
+    <li>✔ Transparent Fee Structure</li>
+  </ul>
+</section>
+
+<section class="compliance">
+  <h3>Legal & Compliance</h3>
+  <p>
+    OSTC operates under Indian overseas recruitment guidelines and follows ethical recruitment standards.
+  </p>
+  <p>
+    Registration No: XXXXX <br>
+    GST: XXXXX <br>
+    No placement processed without official documentation.
+  </p>
+</section>
+
+<footer>
+  © 2026 OSTC International Recruitment | Rajkot, Gujarat, India <br>
+  Email: info@onservicetravel.com | Phone: +91 9624001714
+</footer>
 
 <script>
-/* FILTER */
-function filterJobs(){
-let filter = document.getElementById("countryFilter").value;
-let cards = document.querySelectorAll(".card");
+function setCountdown(id, deadline) {
+  const interval = setInterval(function() {
 
-cards.forEach(card=>{
-if(filter === "all" || card.dataset.country === filter){
-card.style.display="block";
-}else{
-card.style.display="none";
-}
-});
-}
+    const now = new Date().getTime();
+    const endDate = new Date(deadline).getTime();
+    const distance = endDate - now;
 
-/* EXPAND */
-function toggleDetails(btn){
-let details = btn.nextElementSibling;
-details.style.display = details.style.display === "block" ? "none" : "block";
-}
+    if (distance <= 0) {
+      document.getElementById(id).innerHTML = "Applications Closed";
+      clearInterval(interval);
+      return;
+    }
 
-/* COUNTDOWN */
-function setCountdown(id, deadline){
-const interval=setInterval(()=>{
-const now=new Date().getTime();
-const end=new Date(deadline).getTime();
-const distance=end-now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-if(distance<=0){
-document.getElementById(id).innerHTML="Closed";
-clearInterval(interval);
-return;
+    document.getElementById(id).innerHTML =
+      days + "d " +
+      hours + "h " +
+      minutes + "m " +
+      seconds + "s remaining";
+
+  }, 1000);
 }
 
-const days=Math.floor(distance/(1000*60*60*24));
-const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-const seconds=Math.floor((distance%(1000*60))/1000);
-
-let el=document.getElementById(id);
-el.innerHTML=`${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-if(days<7){el.classList.add("red");}
-else if(days<30){el.classList.add("orange");}
-
-},1000);
-}
-
-setCountdown("cd1","2026-12-31T23:59:59");
-setCountdown("cd2","2026-09-30T23:59:59");
-
-/* TRUST POPUP */
-setTimeout(()=>{
-alert("✔ 3 candidates applied today from Gujarat");
-},8000);
+setCountdown("countdown1", "2026-12-31T23:59:59");
+setCountdown("countdown2", "2026-10-15T23:59:59");
+setCountdown("countdown3", "2026-09-30T23:59:59");
+setCountdown("countdown4", "2026-11-20T23:59:59");
 </script>
 
 </body>
