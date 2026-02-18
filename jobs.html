@@ -175,8 +175,6 @@
 
     <div class="grid" id="jobGrid">
 
-      <!-- Job Cards -->
-
       <div class="card job-card fade-in" data-country="Israel">
         <span class="badge-featured">FEATURED</span>
         <span class="badge-urgent">URGENT</span>
@@ -246,6 +244,126 @@
 
     </div>
   </div>
-
 </div>
 </section>
+
+<!-- Worker Benefits Section -->
+<section class="section">
+  <h3>What You Get</h3>
+  <ul style="max-width:600px; margin:auto; line-height:2;">
+    <li>✔ Legal Work Visa</li>
+    <li>✔ Employment Contract Before Departure</li>
+    <li>✔ Airport Pickup</li>
+    <li>✔ Accommodation Assistance</li>
+    <li>✔ Medical Insurance</li>
+  </ul>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>On Service Travel Consultants</h3>
+      <p>Global Workforce Recruitment & Deployment</p>
+      <p>🇮🇳 Based in India, hiring globally</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 OSTC</div>
+</footer>
+
+<script>
+function applyJob(country, job) {
+  localStorage.setItem("selectedCountry", country);
+  localStorage.setItem("selectedJob", job);
+  window.location.href = "contact.html";
+}
+
+const filters = document.querySelectorAll('.country-filter');
+const jobCards = document.querySelectorAll('.job-card');
+const jobCount = document.getElementById('jobCount');
+const clearBtn = document.getElementById('clearFilters');
+const sortSelect = document.getElementById('sortSelect');
+const jobGrid = document.getElementById('jobGrid');
+
+function updateCount() {
+  const visible = Array.from(jobCards).filter(card => card.style.display !== "none");
+  jobCount.innerText = visible.length + " Positions Available";
+}
+
+filters.forEach(f => f.addEventListener('change', () => {
+  const selected = Array.from(filters).filter(f => f.checked).map(f => f.value);
+  jobCards.forEach(card => {
+    const country = card.dataset.country;
+    card.style.display = (selected.length === 0 || selected.includes(country)) ? "block" : "none";
+  });
+  updateCount();
+}));
+
+clearBtn.addEventListener('click', () => {
+  filters.forEach(f => f.checked = false);
+  jobCards.forEach(card => card.style.display = "block");
+  updateCount();
+});
+
+/* 10 DAY LIVE TIMER */
+function handleCountdowns() {
+  const tenDays = new Date().getTime() + (10 * 24 * 60 * 60 * 1000);
+
+  jobCards.forEach(card => {
+    card.dataset.deadline = tenDays;
+  });
+
+  function updateTimers() {
+    const now = new Date().getTime();
+
+    jobCards.forEach(card => {
+      const countdownEl = card.querySelector('.countdown');
+      const deadline = parseInt(card.dataset.deadline);
+      const distance = deadline - now;
+
+      if (distance <= 0) {
+        countdownEl.innerText = "Application Closed";
+        countdownEl.style.color = "red";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerText =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+      if (distance <= 10 * 60 * 1000) {
+        countdownEl.style.color = "red";
+      } else {
+        countdownEl.style.color = "";
+      }
+    });
+  }
+
+  updateTimers();
+  setInterval(updateTimers, 1000);
+}
+
+handleCountdowns();
+updateCount();
+
+/* Expand after 2s hover */
+jobCards.forEach(card => {
+  let timer;
+  card.addEventListener("mouseenter", () => {
+    timer = setTimeout(() => {
+      card.classList.add("expanded");
+    }, 2000);
+  });
+
+  card.addEventListener("mouseleave", () => {
+    clearTimeout(timer);
+    card.classList.remove("expanded");
+  });
+});
+</script>
+
+</body>
+</html>
