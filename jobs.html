@@ -4,189 +4,291 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jobs | OSTC International Recruitment</title>
-<link rel="stylesheet" href="style.css">
+
+<meta name="description" content="Verified overseas jobs in Israel, Czech Republic and Malta. Ethical recruitment. Legal work permits.">
+
+<!-- Google Job Schema Example -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "JobPosting",
+ "title": "Steel Fixer",
+ "employmentType": "FULL_TIME",
+ "hiringOrganization": {
+   "@type": "Organization",
+   "name": "Levant Infrastructure Ltd"
+ },
+ "jobLocation": {
+   "@type": "Place",
+   "address": {
+     "@type": "PostalAddress",
+     "addressCountry": "IL"
+   }
+ }
+}
+</script>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0b1c2d,#133b5c);
+  color: #222;
+}
+
+/* HEADER */
+header {
+  background: rgba(0,0,0,0.7);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 36px;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+  background: white;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+/* FILTER */
+.filters {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+select {
+  padding: 8px;
+  margin: 5px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 25px;
+}
+
+/* GLASS CARD */
+.card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.4s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* VERIFIED BADGE */
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #2ecc71;
+  color: white;
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* COUNTDOWN COLORS */
+.countdown {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.orange { color: orange; }
+.red { color: red; animation: pulse 1s infinite; }
+
+@keyframes pulse {
+  0% {opacity:1;}
+  50% {opacity:0.5;}
+  100% {opacity:1;}
+}
+
+/* EXPAND */
+.details {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Sticky WhatsApp */
+.sticky {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* Compliance */
+.compliance {
+  font-size: 14px;
+  line-height: 1.6;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">OSTC</div>
+  <div class="logo">OSTC International Recruitment</div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="countries.html">Countries</a>
-    <a href="jobs.html">Jobs</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="section">
-  <h2>Current International Job Openings</h2>
-  <p>All positions are verified and legally compliant.</p>
+<section class="hero">
+  <h1>🌍 Verified International Jobs</h1>
+  <p>Ethical Recruitment | Legal Deployment | Transparent Process</p>
 </section>
 
 <section class="section">
-  <div class="grid">
 
-    <!-- FEATURED JOB -->
-    <div class="card featured-job">
-      <div class="badge-new">FEATURED</div>
-      <h3>🇮🇱 Israel – Steel Fixer</h3>
-      <p><strong>Job ID:</strong> IL-SF-1024</p>
-      <p><strong>Salary:</strong> ₹1,50,000 – ₹1,80,000 per month</p>
-      <p class="slots">Only 12 positions left</p>
-      <p class="countdown" id="countdown1"></p>
-      <button class="btn" onclick="applyJob('Israel','Steel Fixer')">
-        Apply Now
-      </button>
-    </div>
+<div class="filters">
+<select id="countryFilter" onchange="filterJobs()">
+<option value="all">All Countries</option>
+<option value="Israel">Israel</option>
+<option value="Czech">Czech</option>
+<option value="Malta">Malta</option>
+</select>
+</div>
 
-    <!-- CAR MECHANIC -->
-    <div class="card">
-      <h3>🇮🇱 Israel – Car Mechanic</h3>
-      <p><strong>Job ID:</strong> IL-CM-2041</p>
-      <p><strong>Salary:</strong> ₹1,20,000 – ₹1,60,000 per month</p>
-      <p class="slots">Only 8 positions left</p>
-      <p class="countdown" id="countdown2"></p>
-      <button class="btn" onclick="applyJob('Israel','Car Mechanic')">
-        Apply Now
-      </button>
-    </div>
+<div class="grid">
 
-    <!-- WAREHOUSE -->
-    <div class="card">
-      <h3>🇨🇿 Czech Republic – Warehouse Worker</h3>
-      <p><strong>Job ID:</strong> CZ-WH-3302</p>
-      <p><strong>Salary:</strong> €1,300 – €1,600 per month</p>
-      <p class="slots">Only 15 positions left</p>
-      <p class="countdown" id="countdown3"></p>
-      <button class="btn" onclick="applyJob('Czech Republic','Warehouse Worker')">
-        Apply Now
-      </button>
-    </div>
+<div class="card" data-country="Israel">
+<span class="badge" title="Documents verified by OSTC Compliance Team">✔ Verified</span>
+<h3>🇮🇱 Israel – Steel Fixer</h3>
+<p><strong>Salary:</strong> ₹1,50,000 – ₹1,80,000</p>
+<p class="countdown" id="cd1"></p>
+<button onclick="toggleDetails(this)">View Details</button>
+<div class="details">
+Requirements: 3+ years experience<br>
+Accommodation provided<br>
+Overtime paid separately
+</div>
+</div>
 
-    <!-- MALTA -->
-    <div class="card">
-      <div class="badge-new">NEW</div>
-      <h3>🇲🇹 Malta – Car Body Sprayer</h3>
-      <p><strong>Job ID:</strong> MT-CB-4411</p>
-      <p><strong>Salary:</strong> €1,800 – €2,200 per month</p>
-      <p class="slots">Only 5 positions left</p>
-      <p class="countdown" id="countdown4"></p>
-      <button class="btn" onclick="applyJob('Malta','Car Body Sprayer')">
-        Apply Now
-      </button>
-    </div>
+<div class="card" data-country="Czech">
+<span class="badge" title="Documents verified by OSTC Compliance Team">✔ Verified</span>
+<h3>🇨🇿 Czech – Warehouse Worker</h3>
+<p><strong>Salary:</strong> €1,300 – €1,600</p>
+<p class="countdown" id="cd2"></p>
+<button onclick="toggleDetails(this)">View Details</button>
+<div class="details">
+40 hours/week<br>
+EU Work Permit<br>
+Accommodation support
+</div>
+</div>
 
-  </div>
+</div>
 </section>
 
-<footer class="main-footer">
+<section class="section compliance">
+<h2>Compliance & Ethical Recruitment</h2>
+<p>OSTC follows Indian overseas employment regulations.</p>
+<p>✔ MEA Guidelines Compliant</p>
+<p>✔ Anti-Fraud Policy Active</p>
+<p>✔ Official Contracts Before Departure</p>
+</section>
 
-  <div class="footer-container">
-
-    <!-- LEFT BRAND COLUMN -->
-    <div class="footer-brand">
-      <h3>On Service Travel Consultants</h3>
-      <p>Global Workforce Recruitment & Deployment</p>
-      <p>🇮🇳 Based in India, hiring globally</p>
-    </div>
-
-    <!-- SERVICES -->
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li>Overseas Recruitment</li>
-        <li>Trade Testing</li>
-        <li>Visa Processing</li>
-        <li>Employer Workforce Solutions</li>
-        <li>Pre-Departure Orientation</li>
-      </ul>
-    </div>
-
-    <!-- INDUSTRIES -->
-    <div class="footer-col">
-      <h4>Industries</h4>
-      <ul>
-        <li>Construction</li>
-        <li>Manufacturing</li>
-        <li>Logistics</li>
-        <li>Automotive</li>
-        <li>Agriculture</li>
-      </ul>
-    </div>
-
-    <!-- COMPANY -->
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="countries.html">Countries</a></li>
-        <li><a href="jobs.html">Vacancies</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="footer-col footer-contact">
-      <h4>Contact</h4>
-
-      <div class="contact-row">
-        <div>
-          <strong>Email</strong>
-          <p><a href="mailto:info@onservicetravel.com">info@onservicetravel.com</a></p>
-        </div>
-
-        <div>
-          <strong>Phone</strong>
-          <p><a href="tel:+919624001714">+91 9624001714</a></p>
-        </div>
-      </div>
-
-      <div class="footer-address">
-        <strong>Head Office:</strong>
-        <p>
-          “Everest House”<br>
-          Between Mavdi Circle & Gondal Circle,<br>
-          150 Feet Ring Road,<br>
-          Rajkot – 360 004,<br>
-          Gujarat, India
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2026 On Service Travel Consultants (OSTC) | Ethical & Legal Overseas Recruitment
-  </div>
-
-</footer>
+<a href="https://wa.me/919624001714" class="sticky">💬</a>
 
 <script>
-function applyJob(country, job) {
-  localStorage.setItem("selectedCountry", country);
-  localStorage.setItem("selectedJob", job);
-  window.location.href = "contact.html";
+/* FILTER */
+function filterJobs(){
+let filter = document.getElementById("countryFilter").value;
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+if(filter === "all" || card.dataset.country === filter){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+});
 }
 
-/* Simple countdown system */
-function setCountdown(elementId, deadline) {
-  const endDate = new Date(deadline).getTime();
-  const now = new Date().getTime();
-  const distance = endDate - now;
-
-  const days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
-
-  document.getElementById(elementId).innerText =
-    "Application closes in " + days + " days";
+/* EXPAND */
+function toggleDetails(btn){
+let details = btn.nextElementSibling;
+details.style.display = details.style.display === "block" ? "none" : "block";
 }
 
-setCountdown("countdown1", "2026-12-31");
-setCountdown("countdown2", "2026-10-15");
-setCountdown("countdown3", "2026-09-30");
-setCountdown("countdown4", "2026-11-20");
+/* COUNTDOWN */
+function setCountdown(id, deadline){
+const interval=setInterval(()=>{
+const now=new Date().getTime();
+const end=new Date(deadline).getTime();
+const distance=end-now;
+
+if(distance<=0){
+document.getElementById(id).innerHTML="Closed";
+clearInterval(interval);
+return;
+}
+
+const days=Math.floor(distance/(1000*60*60*24));
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds=Math.floor((distance%(1000*60))/1000);
+
+let el=document.getElementById(id);
+el.innerHTML=`${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+if(days<7){el.classList.add("red");}
+else if(days<30){el.classList.add("orange");}
+
+},1000);
+}
+
+setCountdown("cd1","2026-12-31T23:59:59");
+setCountdown("cd2","2026-09-30T23:59:59");
+
+/* TRUST POPUP */
+setTimeout(()=>{
+alert("✔ 3 candidates applied today from Gujarat");
+},8000);
 </script>
 
 </body>
