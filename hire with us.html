@@ -3,236 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Employer Compliance Portal | Canada TFWP | OSTC</title>
+<title>Employer Compliance & LMIA Pipeline | OSTC Canada</title>
 <link rel="stylesheet" href="style.css">
 <style>
-    /* MASTER STYLING: CLEAN WHITE & PROFESSIONAL */
-    :root {
-        --primary-red: #d52b1e;
-        --accent-gold: #b8964d;
-        --text-main: #2d3436;
-        --text-light: #636e72;
-        --bg-white: #ffffff;
-        --bg-soft: #f9f9f9;
-    }
-
-    body {
-        background-color: var(--bg-white);
-        color: var(--text-main);
-        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        line-height: 1.7;
-        margin: 0;
-    }
-
-    /* HEADER STYLES */
-    header {
-        background: white;
-        padding: 20px 10%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    .logo { font-weight: 900; font-size: 1.5rem; color: #000; }
-    .logo span { color: var(--primary-red); }
-    nav a { text-decoration: none; color: var(--text-main); margin-left: 25px; font-weight: 600; font-size: 0.95rem; }
-
-    /* HERO */
-    .hero-employer {
-        background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80');
-        background-size: cover;
-        padding: 100px 10%;
-        text-align: center;
-        border-bottom: 1px solid #eee;
-    }
-
-    .hero-employer h1 { font-size: 3rem; color: #000; margin: 0; letter-spacing: -1px; }
-    .hero-employer p { font-size: 1.2rem; color: var(--text-light); max-width: 800px; margin: 20px auto; }
-
-    /* LONG FORM CONTENT SECTIONS */
-    .content-wrapper { max-width: 1100px; margin: auto; padding: 60px 20px; }
+    :root { --can-red: #d52b1e; --gold: #d4af37; --dark: #121212; --soft-bg: #f8f9fa; }
     
-    .manual-section { margin-bottom: 80px; }
-    .manual-section h2 { 
-        font-size: 2.2rem; 
-        color: #000; 
-        border-left: 6px solid var(--primary-red); 
-        padding-left: 20px; 
-        margin-bottom: 30px;
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+    .hero-employer {
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80');
+        background-size: cover; background-position: center;
+        padding: 100px 10%; text-align: center; color: white;
     }
 
-    .technical-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        margin-top: 30px;
+    .section-header { text-align: center; margin: 60px 0 40px; }
+    .section-header h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 10px; }
+    .section-header p { color: var(--gold); font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Technical Step Cards */
+    .compliance-timeline { display: grid; grid-template-columns: 1fr; gap: 30px; padding: 0 10%; }
+    .tech-step { 
+        background: white; border: 1px solid #e0e0e0; border-left: 6px solid var(--can-red);
+        padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: grid; grid-template-columns: 80px 1fr; gap: 20px;
     }
+    .step-number { font-size: 3rem; font-weight: 900; color: #eee; line-height: 1; }
+    .step-content h3 { margin-top: 0; color: var(--dark); font-size: 1.5rem; }
+    .form-pill { background: #333; color: var(--gold); padding: 3px 10px; border-radius: 4px; font-family: monospace; font-size: 0.8rem; margin-left: 10px; }
+    
+    .feature-list { list-style: none; padding: 0; margin-top: 15px; }
+    .feature-list li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 0.95rem; color: #444; text-align: justify; }
+    .feature-list li::before { content: "→"; position: absolute; left: 0; color: var(--can-red); font-weight: bold; }
 
-    .detail-text { text-align: justify; color: var(--text-main); font-size: 1.05rem; }
-    .detail-text b { color: #000; }
-
-    /* DATA HIGHLIGHT BLOCKS */
-    .info-callout {
-        background: var(--bg-soft);
-        border: 1px solid #e0e0e0;
-        padding: 40px;
-        border-radius: 8px;
-        margin: 40px 0;
+    .verification-grid { 
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 30px; background: var(--dark); padding: 60px 5%; color: white; border-radius: 20px; margin: 60px 10%;
     }
+    .v-card { padding: 20px; }
+    .v-card h4 { color: var(--gold); font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; }
+    .v-card p { font-size: 0.95rem; color: #ccc; line-height: 1.8; }
 
-    .info-callout h3 { color: var(--accent-gold); text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; margin-top: 0; }
-
-    /* COUNTER CARDS */
-    .stat-row {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin: 40px 0;
-    }
-
-    .stat-card {
-        padding: 30px;
-        text-align: center;
-        background: #fff;
-        border: 1px solid #eee;
-        border-bottom: 4px solid var(--accent-gold);
-    }
-
-    .stat-card h4 { font-size: 2rem; margin: 0; color: var(--primary-red); }
-    .stat-card p { font-size: 0.9rem; font-weight: bold; color: var(--text-light); margin-top: 5px; }
-
-    /* FOOTER */
-    .footer { background: #1a1a1a; color: #fff; padding: 60px 10%; text-align: center; }
-    .btn-apply {
-        display: inline-block;
-        background: var(--primary-red);
-        color: #fff;
-        padding: 18px 40px;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 4px;
-        margin-top: 30px;
-    }
-
-    @media (max-width: 768px) { .technical-grid { grid-template-columns: 1fr; } }
+    .btn { padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; }
 </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">OSTC <span>CANADA</span></div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="countries.html">Countries</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<header style="display: flex; justify-content: space-between; padding: 20px 10%; align-items: center; border-bottom: 1px solid #eee;">
+  <div class="logo" style="font-weight: 900;">OSTC <span style="color: var(--can-red);">INTERNATIONAL</span></div>
+  <nav>
+    <a href="index.html" style="margin-left: 20px; text-decoration: none; color: #333;">Home</a>
+    <a href="about.html" style="margin-left: 20px; text-decoration: none; color: #333;">About</a>
+    <a href="contact.html" style="margin-left: 20px; text-decoration: none; color: var(--can-red); font-weight: bold;">Hire Now</a>
+  </nav>
 </header>
 
 <section class="hero-employer">
-    <h1>Strategic Global Hiring Manual</h1>
-    <p>A comprehensive technical framework for Canadian employers navigating the 2026 TFWP and LMIA compliance landscape.</p>
+    <h1>End-to-End <span style="color: var(--gold);">LMIA & TFWP</span> Management</h1>
+    <p>A data-driven recruitment pipeline for Canadian Farm Owners, Fleet Managers, and Skilled Trade Employers.</p>
+    <a href="#inquiry" class="btn" style="background: var(--can-red); color: white;">Download 2026 Employer Guide</a>
 </section>
 
-<div class="content-wrapper">
-
-    <section class="manual-section">
-        <h2>I. Domestic Labour Market Testing & ESDC Compliance</h2>
-        <div class="technical-grid">
-            <div class="detail-text">
-                The foundational requirement for any <b>Labour Market Impact Assessment (LMIA)</b> is the verification that no Canadian citizen or Permanent Resident is available for the role. In 2026, Employment and Social Development Canada (ESDC) has intensified its audit of the "Mandatory Recruitment Period." OSTC manages this entire 30-day lifecycle with forensic precision. 
-                <br><br>
-                We execute the mandatory <b>Job Bank</b> posting, but more importantly, we manage the <b>"Job Match" tool</b>. Service Canada now requires employers to actively invite every "4-star" and "5-star" candidate within the Job Bank system. If an employer ignores these candidates, the LMIA will be refused for lack of recruitment effort. We provide you with a <b>Recruitment Summary Report</b> that documents every interaction, interview, and the technical, non-discriminatory reason for every non-selection. This report is your primary defense in a government audit.
-            </div>
-            <div class="detail-text">
-                Beyond Job Bank, we utilize two additional <b>National Scope</b> recruitment methods. Whether it is <b>NOC 73300 (Transport Truck Drivers)</b> or <b>NOC 85100 (Livestock Labourers)</b>, we place ads on high-traffic platforms like Indeed, LinkedIn, and sector-specific boards. 
-                <br><br>
-                Our <b>Wage Integrity Audit</b> ensures that your offered salary meets the 2026 <b>Median Hourly Wage</b> for your specific Economic Region. Under-offering by even $0.10 will lead to an immediate refusal. We ensure that your internal payroll matches the <b>CRA T4</b> data and the LMIA offer to prevent "Wage Non-Compliance" penalties. This is not just hiring; it is risk management.
-            </div>
-        </div>
-
-        <div class="stat-row">
-            <div class="stat-card"><h4>100%</h4><p>LMIA COMPLIANCE</p></div>
-            <div class="stat-card"><h4>4 WEEKS</h4><p>RECRUITMENT MIN.</p></div>
-            <div class="stat-card"><h4>6 YEARS</h4><p>RECORD RETENTION</p></div>
-            <div class="stat-card"><h4>$1,000</h4><p>ESDC FEE MGMT</p></div>
-        </div>
-    </section>
-
-    
-
-    <section class="manual-section">
-        <h2>II. Source Integrity & Indian Verification Protocols</h2>
-        <div class="info-callout">
-            <h3>Mitigating "Section 40" Misrepresentation</h3>
-            <p class="detail-text">
-                One of the most dangerous risks for a Canadian employer is a worker providing a fake document. Under <b>Section 40 of the Immigration and Refugee Protection Act (IRPA)</b>, this is considered misrepresentation. If a worker is found with fake documents, the employer can be banned from the TFWP for up to 5 years. <b>OSTC kills this risk at the source.</b> 
-                <br><br>
-                In India, we exclusively process <b>PSK-PCC (Passport Seva Kendra)</b> police clearances, which are verifiable via federal QR codes. We do not accept local police letters. Furthermore, we conduct physical <b>"Ground Verification"</b> of experience letters. Our team calls previous Indian employers to verify salary history and tenure. For skilled trades, we put candidates through practical testing at our <b>Rajkot Center</b>. If a candidate says they are a "Heavy Duty Mechanic," they must prove it in our workshop before their resume is sent to your desk.
-            </p>
-        </div>
-        <div class="technical-grid">
-            <div class="detail-text">
-                <b>Identity Verification:</b> We cross-check every candidate's Aadhar (National ID) and Passport against their employment history. This ensures that the person you interview via Zoom is the exact person who arrives at the airport. 
-            </div>
-            <div class="detail-text">
-                <b>Medical Pre-Screening:</b> We coordinate "Upfront Medicals" with <b>IRCC-authorized Panel Physicians</b>. By screening for health issues early, we prevent the "Medical Inadmissibility" delays that often stall deployments for months.
-            </div>
-        </div>
-    </section>
-
-    <section class="manual-section">
-        <h2>III. The IRCC Deployment Lifecycle</h2>
-        <div class="detail-text">
-            Once the Positive LMIA is in hand, the file transitions to <b>Immigration, Refugees and Citizenship Canada (IRCC)</b>. OSTC manages the <b>Form IMM 1295 (Work Permit)</b> and the <b>Employer Portal</b> filing. We ensure that the $230 CAD Employer Compliance Fee is paid and the Offer of Employment is submitted via the GCKey portal with 100% accuracy.
-            <br><br>
-            A critical part of our service is the <b>Port of Entry (POE) Briefing</b>. We prepare our workers on how to present their work permit approval to CBSA officers. We train them to clearly articulate their job duties and their intent to return to India upon the permit's expiration—addressing <b>Section 216(1)</b> concerns about "Dual Intent." This prevents workers from being turned away at the Canadian border.
-        </div>
-
-        <div class="info-callout" style="border-left: 5px solid var(--primary-red);">
-            <h3>2026 Policy Update: The 6% Unemployment Rule</h3>
-            <p class="detail-text">
-                Effective 2026, IRCC refuses Low-Wage LMIA applications in census metropolitan areas where the unemployment rate is <b>6% or higher</b>. OSTC performs a "Regional Audit" of your business location before you apply. If you are in a refusal zone, we provide the strategy to pivot to the <b>High-Wage Stream</b> or <b>Primary Agriculture Stream</b>, which are exempt from these refusal rules.
-            </p>
-        </div>
-    </section>
-
-    
-
-    <section class="manual-section">
-        <h2>IV. Employer Post-Arrival Obligations & Audit Defense</h2>
-        <div class="technical-grid">
-            <div class="detail-text">
-                Your legal commitment to the TFWP does not end when the worker arrives. You are required to maintain a <b>Compliance Binder</b> for 6 years. This must include pay stubs showing the correct hourly rate, proof of transportation (if applicable), and housing inspection reports. 
-                <br><br>
-                For <b>Agriculture and Low-Wage</b> streams, we assist you in meeting the "Suitable and Affordable Housing" requirement. We help coordinate municipal inspections to ensure your worker housing meets the federal standard, protecting you from massive fines or a TFWP blacklist.
-            </div>
-            <div class="detail-text">
-                <b>Payroll Integrity:</b> We work with your accounting team to ensure that <b>CRA deductions</b> (CPP, EI) are handled correctly for foreign workers. During a Service Canada inspection, the officer will compare your payroll logs to the original LMIA. OSTC ensures these documents match perfectly, so your business remains in good standing with the government.
-            </div>
-        </div>
-    </section>
-
-    <div style="text-align: center; padding: 60px 0; border-top: 2px solid #eee;">
-        <h2>Ready to Secure Your 2026 Workforce?</h2>
-        <p>Contact our Canada Compliance Division for a technical labor audit of your company.</p>
-        <a href="contact.html" class="btn-apply">REQUEST TECHNICAL CONSULTATION</a>
-    </div>
-
+<div class="section-header">
+    <p>Phase 01: Service Canada (ESDC) Compliance</p>
+    <h2>The Labour Market Test</h2>
 </div>
 
-<footer class="footer">
-    <div class="logo" style="color:#fff; margin-bottom: 20px;">OSTC <span>INTERNATIONAL</span></div>
-    <p>© 2026 On Service Travel Consultants (OSTC) | Regulatory Partner for Canadian TFWP Systems</p>
-    <p style="font-size: 0.8rem; color: #777;">Disclaimer: OSTC is a recruitment firm. Legal immigration services are provided by authorized IRCC representatives.</p>
+<div class="compliance-timeline">
+    <div class="tech-step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+            <h3>Advertising & Recruitment Audit <span class="form-pill">ST-01-B</span></h3>
+            <p>We manage the mandatory 30-day "Market Test" required by ESDC. In 2026, Service Canada has shifted from simple ad-checking to forensic recruitment audits. Our process ensures you meet the highest standard of "Active Candidate Engagement."</p>
+            <ul class="feature-list">
+                <li><b>Job Bank Match Requirement:</b> We manage your Job Bank profile to ensure all "4-star" and "5-star" Canadian candidates are manually invited within the first 14 days. Failure to invite qualified domestic leads is the #1 cause of LMIA refusal in 2026.</li>
+                <li><b>Multi-Platform Saturation:</b> Strategic placement on 2 additional national platforms. For <b>NOC 73300 (Transport)</b>, we utilize trucking-specific boards; for <b>NOC 85100 (Agriculture)</b>, we target regional agricultural bulletins to prove local scarcity.</li>
+                <li><b>Forensic Recruitment Summary:</b> We compile the <b>Recruitment Summary Report</b>. This documents every resume received, the date of interview, and the specific, non-discriminatory technical reasons for non-selection (e.g., lack of specific provincial licensure or inability to meet safety-sensitive heavy lifting requirements).</li>
+                <li><b>Record Retention:</b> We organize your "Audit Binder" containing proof of payment for all ads and digital copies of all applications, which must be stored for 6 years as per IRPR regulations.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tech-step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+            <h3>NOC 2021 & Wage Analysis <span class="form-pill">TEER 0-5</span></h3>
+            <p>We perform a technical audit of your job offer. Under-offering by even $0.25 below the regional median will trigger an immediate system rejection.</p>
+            <ul class="feature-list">
+                <li><b>NOC 2021 Alignment:</b> Precise mapping of duties to <b>TEER categories</b>. We ensure your job description for a "Heavy-Duty Mechanic" doesn't accidentally trigger a "Service Technician" classification, which carries different wage requirements.</li>
+                <li><b>Wage Integrity Audit:</b> We verify your offer against the <b>Economic Region Median</b>. If your region (e.g., Lethbridge vs. Calgary) has a higher prevailing wage for your NOC, we adjust the offer to ensure it is "Audit-Proof" against CRA cross-referencing.</li>
+                <li><b>Transition Plan Drafting:</b> For High-Wage positions, we draft the mandatory <b>Transition Plan</b>, outlining how you will reduce reliance on foreign workers through future domestic training or Permanent Residency support for your current staff.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tech-step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+            <h3>Workforce Cap & Regional Audit <span class="form-pill">6% RULE</span></h3>
+            <p>New 2026 directives strictly limit Low-Wage hiring based on regional economic health. We navigate these barriers to keep your pipeline open.</p>
+            <ul class="feature-list">
+                <li><b>The 6% Refusal Rule:</b> As of early 2026, Low-Wage LMIAs are refused in regions with 6% or higher unemployment. We conduct a pre-filing audit of your <b>Census Metropolitan Area (CMA)</b> and pivot to High-Wage or Agriculture streams if your region is restricted.</li>
+                <li><b>TFW Cap Calculation:</b> We calculate your current 10% or 20% (sector-specific) workforce cap. We ensure your "total head count" includes all active TFWs and pending applications to prevent over-quota rejections.</li>
+                <li><b>Primary Agriculture Exemptions:</b> We leverage exemptions for the <b>Seasonal Agricultural Worker Program (SAWP)</b> and the Agricultural Stream, ensuring farm owners are not subject to the 6% regional refusal rules.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section-header">
+    <p>Phase 02: Source-Country Integrity (India)</p>
+    <h2>Zero-Fraud Verification Pipeline</h2>
+</div>
+
+<div class="verification-grid">
+    <div class="v-card">
+        <h4>PSK-PCC & Federal Security</h4>
+        <p>Liability for fraud falls on the Canadian employer. To protect you, OSTC sources only via <b>Passport Seva Kendra (PSK)</b>. We verify federal Police Clearance Certificates via digital QR-code tracking. This ensures zero criminal history and prevents <b>Section 40 Misrepresentation</b> charges that could lead to your company being banned from the TFWP for 5 years.</p>
+    </div>
+    <div class="v-card">
+        <h4>Practical Trade Testing (Rajkot)</h4>
+        <p>Resumes are not reality. At our <b>Rajkot Center</b>, we conduct physical trade tests. For fleet owners, our drivers must demonstrate <b>Pre-Trip Inspection</b> proficiency and air-brake knowledge. For farm owners, labourers are tested on equipment safety and chemical handling. You only interview candidates who have already passed our technical gatekeepers.</p>
+    </div>
+    <div class="v-card">
+        <h4>IRCC Medical & Bio-Readiness</h4>
+        <p>We coordinate "Upfront Medicals" with <b>IRCC-authorized Panel Physicians</b> in India. By screening for communicable diseases and health issues before the LMIA is even issued, we eliminate the 3-month medical delays that often happen at the visa stage. We ensure every worker has their biometrics booked at <b>VFS Global</b> within 48 hours of work permit submission.</p>
+    </div>
+</div>
+
+<div class="section-header">
+    <p>Phase 03: IRCC & VFS Global</p>
+    <h2>Deployment & Visa Stamping</h2>
+</div>
+
+<div class="compliance-timeline">
+    <div class="tech-step" style="border-left-color: var(--gold);">
+        <div class="step-number">04</div>
+        <div class="step-content">
+            <h3>Work Permit Submission <span class="form-pill">IMM 1295</span></h3>
+            <p>Once the Positive LMIA is received, the file moves to the <b>Visa Office Abroad</b>. OSTC manages the 100% digital submission to the IRCC portal.</p>
+            <ul class="feature-list">
+                <li><b>Employer Portal Compliance:</b> We manage the submission of the <b>Offer of Employment</b> through the GCKey portal and verify the payment of the $230 Employer Compliance Fee.</li>
+                <li><b>Family & Schedule 1 Filings:</b> We handle the complex <b>IMM 5257 (Schedule 1)</b> forms, ensuring a worker's past military service or travel history is disclosed accurately to prevent <b>Security Inadmissibility</b> delays.</li>
+                <li><b>Port of Entry (POE) Briefing:</b> We prepare the worker for the <b>CBSA Interview</b>. They are trained to present their Letter of Introduction and explain their job duties to the border officer, ensuring their Work Permit is issued correctly upon arrival at YYZ or YVR.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tech-step" style="border-left-color: var(--gold);">
+        <div class="step-number">05</div>
+        <div class="step-content">
+            <h3>Housing & Post-Arrival Audit</h3>
+            <p>Your compliance obligations continue after the worker arrives. OSTC provides the framework for long-term audit defense.</p>
+            <ul class="feature-list">
+                <li><b>Housing Standards:</b> For Agricultural and Low-Wage streams, we verify that your worker housing meets <b>CMHC standards</b> (Suitability & Affordability). We assist in coordinating the mandatory 8-month housing inspection reports required for LMIA renewals.</li>
+                <li><b>CRA Payroll Alignment:</b> We ensure your payroll deductions (CPP, EI) match the <b>Employment Agreement</b>. During a random Service Canada inspection, we provide the documentation to prove the worker is being paid the exact wage promised in the LMIA.</li>
+                <li><b>Worker Rights Orientation:</b> To satisfy <b>IRPR Section 209.2</b>, we provide the worker with a manual on their rights in Canada, protecting you from "abuse" or "mistreatment" allegations during future government audits.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section id="inquiry" style="background: var(--dark); color: white; padding: 80px 10%; text-align: center;">
+    <h2>Initiate Your 2026 Labour Audit</h2>
+    <p>Secure your workforce with a technically compliant, zero-fraud pipeline.</p>
+    <a href="contact.html" class="btn" style="background: var(--gold); color: black;">Contact Our Compliance Lead</a>
+</section>
+
+<footer style="background: #000; color: #777; padding: 40px 10%; text-align: center; font-size: 0.8rem;">
+    © 2026 OSTC Canada | This manual is for employer guidance only. Regulatory services are provided in accordance with the Immigration and Refugee Protection Act.
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
