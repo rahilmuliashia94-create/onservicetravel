@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hire Workers | On Service Travel Consultants</title>
-  <meta name="description" content="Hire verified, compliant foreign workers from India to Europe. Shortlist in 72 hours, full visa support, and local onboarding." />
+  <meta name="description" content="Hire verified international workers — shortlists in 72 hours, full visa & onboarding support, guaranteed replacements." />
   <link rel="stylesheet" href="style.css" />
+  <!-- small page-specific styles (keeps main look) -->
   <style>
-    /* Page-specific helpers (keeps main look from style.css) */
     .hero .lead { font-size:18px; line-height:1.6; color:#222; max-width:960px; margin-top:8px;}
     .cred-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:16px; }
-    .cred-item { background:#fff; padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.04); display:flex; gap:10px; align-items:center; }
+    .cred-item { background:#fff; padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.04); display:flex; gap:10px; align-items:center; font-size:14px;}
     .section .content-width { max-width:1100px; margin:0 auto; text-align:left; }
     .image-spot { width:100%; height:320px; background:linear-gradient(180deg,#fff,#f7f7f8); border-radius:10px; border:1px solid rgba(0,0,0,0.03); display:flex; align-items:center; justify-content:center; color:#888; margin:14px 0; }
     .bullet-list { max-width:920px; margin:12px 0; padding-left:20px; }
@@ -18,7 +18,7 @@
     .minimal-card { background:#fff; padding:18px; border-radius:12px; border:1px solid rgba(0,0,0,0.04); margin:12px 0; }
     .testimonials blockquote { margin:10px 0; padding:12px 14px; border-left:4px solid rgba(212,175,55,0.9); background:rgba(212,175,55,0.03); }
     .small-note { color:#666; font-size:13px; max-width:920px; margin:8px auto 0; }
-    /* responsive stacks */
+    .timeline .card { padding:20px; }
     @media (max-width:920px) {
       .hero-grid { grid-template-columns: 1fr !important; gap:18px; }
       .image-spot { height:220px; }
@@ -28,7 +28,7 @@
 </head>
 <body>
 
-  <!-- HEADER (matches your site) -->
+  <!-- HEADER -->
   <header>
     <div class="logo">OSTC</div>
     <nav>
@@ -37,6 +37,7 @@
       <a href="services.html">Services</a>
       <a href="hire-workers.html">Hire Workers</a>
       <a href="countries.html">Countries</a>
+      <a href="hire with us.html">Hire with us</a>
       <a href="jobs.html">Jobs</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -46,22 +47,26 @@
   <section class="hero reveal" aria-labelledby="hero-headline" style="padding-top:56px; padding-bottom:48px;">
     <div class="hero-grid" style="display:grid; grid-template-columns: 1fr 420px; gap:36px; align-items:center; max-width:1200px; margin:0 auto;">
       <div>
+        <!-- Headline (primary) -->
         <h1 id="hero-headline" style="font-family:'Playfair Display', serif; color:#d4af37; font-size:40px; line-height:1.02; margin-bottom:10px;">
           Trusted hires from India — screened, legally cleared, trained, and ready to work.
         </h1>
 
-        <!-- Variant A / B ready (admin/dev can change via JS if desired) -->
+        <!-- (hidden admin variant control removed here; primary headline used) -->
+
+        <!-- Subhead -->
         <p class="lead">
           Dependable staff for cleaning, hospitality, construction, logistics, manufacturing, and industrial roles — we manage recruitment, visa compliance, travel logistics, and onboarding so your business can focus on operations.
         </p>
 
+        <!-- Hero Quick Pitch (two paragraphs) -->
         <div style="margin-top:14px;">
-          <p style="max-width:920px; color:#333; line-height:1.65;">
+          <p style="max-width:920px; color:#333; line-height:1.65; margin-bottom:12px;">
             OnServiceTravel connects employers with motivated, verified workers from India who meet both your operational needs and local employment regulations.
             Every candidate undergoes role-specific skills testing, government ID verification, and background screening where permitted by law.
           </p>
 
-          <p style="max-width:920px; color:#333; line-height:1.65; margin-top:8px;">
+          <p style="max-width:920px; color:#333; line-height:1.65;">
             We coordinate work permits, immigration paperwork, and travel logistics through trusted legal partners in destination countries. Combined with pre-departure orientation and structured onboarding support, our process reduces hiring delays, minimizes compliance risks, and ensures workers arrive prepared, productive, and ready to contribute from day one.
           </p>
         </div>
@@ -74,7 +79,7 @@
           <div class="cred-item"><strong style="color:#d4af37">60–90 day replacement guarantee</strong></div>
         </div>
 
-        <!-- CTAs -->
+        <!-- Primary CTA + Book consult -->
         <div style="margin-top:18px; display:flex; gap:12px; align-items:center;">
           <a class="btn" href="contact.html#contact">Get a free shortlist within 72 hours</a>
           <a class="btn" href="contact.html#contact" style="background:transparent; color:#1f1f1f; border:1px solid rgba(0,0,0,0.08)">Book a free consultation</a>
@@ -85,17 +90,17 @@
         </p>
       </div>
 
-      <!-- image placeholder / photo -->
+      <!-- Right column image placeholder -->
       <div>
         <div class="image-spot" role="img" aria-label="Workers ready for deployment">
-          <!-- Replace src with your hero image (recommended 1200×800) -->
+          <!-- Replace with real photo (recommended 1200×800) -->
           <img src="images/hero-workers.jpg" alt="Workers ready for deployment" style="width:100%; height:100%; object-fit:cover;">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- WHY EMPLOYERS CHOOSE OSTC (lead + verified / compliance / speed) -->
   <section class="section reveal">
     <div class="content-width">
       <h2>Why Employers Choose OnServiceTravel</h2>
@@ -103,7 +108,7 @@
         Employers across hospitality, facilities management, and construction choose OnServiceTravel because we combine rigorous candidate vetting, immigration compliance, and reliable delivery timelines.
       </p>
 
-      <h3 style="color:#d4af37; margin-top:16px;">Verified Candidates</h3>
+      <h3 style="color:#d4af37; margin-top:14px;">Verified Candidates</h3>
       <p class="body-copy">
         Every worker goes through a structured verification process including government ID checks, background screening where legally permitted, employment history verification, and reference validation.
         We also conduct practical assessments such as video skill demonstrations and role-specific tests to ensure candidates meet job requirements before interviews begin.
@@ -120,10 +125,25 @@
         Traditional recruitment pipelines often take months. Our structured sourcing network and screening process allows us to provide targeted candidate shortlists within 72 hours and arrange interviews within a week.
         Depending on destination country requirements, workers typically arrive within three to eight weeks.
       </p>
+
+      <h3 style="color:#d4af37; margin-top:10px;">Transparent and Predictable Costs</h3>
+      <p class="body-copy">
+        Our pricing structure is clear and upfront. Employers receive transparent placement fees, no hidden charges, and predictable recruitment costs, often lower than repeated local agency hiring or overtime staffing expenses.
+      </p>
+
+      <h3 style="color:#d4af37; margin-top:10px;">Local Onboarding Support</h3>
+      <p class="body-copy">
+        After arrival, workers receive orientation and practical support. Where required, we assist with temporary housing options, transportation guidance, and workplace integration, while employers receive a local contact point during the worker’s first 30–90 days of employment.
+      </p>
+
+      <h3 style="color:#d4af37; margin-top:10px;">Performance Guarantees</h3>
+      <p class="body-copy">
+        We provide candidate profiles including verification documents, skill results, references, and introduction videos before hiring decisions. If a placement proves unsuitable within the guarantee period, our replacement or credit policy ensures employers maintain operational continuity.
+      </p>
     </div>
   </section>
 
-  <!-- PROCESS (4-step) -->
+  <!-- 4-Step Process -->
   <section class="section reveal">
     <div class="content-width">
       <h2>Our 4-Step International Hiring Process</h2>
@@ -152,23 +172,26 @@
     </div>
   </section>
 
-  <!-- TIMELINE + PACKAGES -->
+  <!-- TIMELINE + COUNTERS (use .step for timeline animation) -->
   <section class="section reveal">
     <div class="content-width">
       <h2>Typical Hiring Timeline</h2>
+
       <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:18px;">
         <div class="minimal-card">
           <h4>Shortlist delivered</h4>
-          <p><strong>72 hours</strong></p>
+          <div class="counter" data-target="72">0</div>
+          <p>hours</p>
         </div>
 
         <div class="minimal-card">
           <h4>Employer interviews</h4>
-          <p><strong>within 7 days</strong></p>
+          <div class="counter" data-target="7">0</div>
+          <p>days</p>
         </div>
 
         <div class="minimal-card">
-          <h4>Permit processing and travel</h4>
+          <h4>Permit processing & travel</h4>
           <p><strong>2–6 weeks</strong> depending on country regulations</p>
         </div>
 
@@ -178,7 +201,40 @@
         </div>
       </div>
 
-      <h2 style="margin-top:20px;">Recruitment Packages</h2>
+      <!-- timeline visual (steps with progress-fill animated by script.js) -->
+      <div class="timeline" style="margin-top:20px;">
+        <div class="step card">
+          <h3>Step 1: Define & Shortlist</h3>
+          <p>We produce a targeted shortlist based on your role, skills, wage, and start date.</p>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+
+        <div class="step card">
+          <h3>Step 2: Interview & Selection</h3>
+          <p>Interviews scheduled; employer selects preferred candidates.</p>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+
+        <div class="step card">
+          <h3>Step 3: Permits & Medicals</h3>
+          <p>We coordinate permits, medicals and embassy appointments in partnership with local specialists.</p>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+
+        <div class="step card">
+          <h3>Step 4: Travel & Arrival</h3>
+          <p>Flights booked, arrival support and employer onboarding provided.</p>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="section reveal">
+    <div class="content-width">
+      <h2>Recruitment Packages</h2>
+
       <div class="minimal-card">
         <h4>Pay-Per-Hire</h4>
         <p>A one-time placement service suitable for seasonal or occasional recruitment needs.</p>
@@ -187,19 +243,19 @@
         <p>Ongoing candidate sourcing and screening for employers with continuous staffing needs. Predictable monthly costs and a steady hiring pipeline.</p>
 
         <h4 style="margin-top:10px;">Managed Hiring Service</h4>
-        <p>An end-to-end solution where OnServiceTravel manages sourcing, compliance, travel logistics, onboarding support, and post-arrival monitoring. Ideal for employers who want a fully managed recruitment process.</p>
+        <p>An end-to-end solution where OnServiceTravel manages sourcing, compliance, travel logistics, onboarding support, and post-arrival monitoring.</p>
 
         <p class="small-note">Contact our team for customized pricing based on role type, destination country, and permit complexity.</p>
       </div>
 
       <div class="minimal-card" style="margin-top:12px;">
         <h4 style="color:#d4af37">Example Pricing Callout</h4>
-        <p>Typical pay-per-hire placements begin from <strong>$X</strong> per candidate, with managed recruitment packages available from <strong>$Y</strong> per placement. Volume discounts are available for employers hiring 20 or more workers annually.</p>
+        <p>Typical pay-per-hire placements begin from <strong>$X</strong> per candidate, with managed recruitment packages available from <strong>$Y</strong> per placement. Volume discounts for 20+ hires annually.</p>
       </div>
     </div>
   </section>
 
-  <!-- COMPLIANCE -->
+  <!-- COMPLIANCE & RISK -->
   <section class="section reveal">
     <div class="content-width">
       <h2>Compliance and Risk Management</h2>
@@ -226,7 +282,7 @@
         <p>Workers complete a structured orientation covering workplace expectations, professional conduct, cultural awareness, basic role-specific training and safety awareness.</p>
 
         <h4 style="margin-top:10px;">Arrival Support</h4>
-        <p>Upon arrival, workers receive assistance with local orientation, temporary accommodation guidance (where arranged), transportation advice and initial workplace integration. Employers receive a structured onboarding checklist to help workers start efficiently.</p>
+        <p>Upon arrival, workers receive assistance with local orientation, temporary accommodation guidance (where arranged), transportation advice and initial workplace integration.</p>
       </div>
 
       <h3 style="margin-top:12px;">Employer Deliverables</h3>
@@ -336,11 +392,11 @@
     </div>
   </section>
 
-  <!-- FOOTER (matches site) -->
+  <!-- FOOTER (same as index) -->
   <footer class="main-footer">
     <div class="footer-container">
-      <div class="footer-brand">
-        <h3>On Service Travel Consultants</h3>
+      <div class="footer-col">
+        <h3>On Service Travel Consultants (OSTC)</h3>
         <p>Global Workforce Recruitment & Deployment</p>
         <p>🇮🇳 Based in India, hiring globally</p>
       </div>
@@ -349,8 +405,8 @@
         <h4>Services</h4>
         <ul>
           <li>Overseas Recruitment</li>
-          <li>Trade Testing</li>
-          <li>Visa Processing</li>
+          <li>Trade Testing & Skill Assessment</li>
+          <li>Visa Processing & Documentation</li>
           <li>Employer Workforce Solutions</li>
           <li>Pre-Departure Orientation</li>
         </ul>
@@ -359,53 +415,36 @@
       <div class="footer-col">
         <h4>Industries</h4>
         <ul>
-          <li>Construction</li>
-          <li>Manufacturing</li>
-          <li>Logistics</li>
-          <li>Automotive</li>
-          <li>Agriculture</li>
+          <li>Construction & Infrastructure</li>
+          <li>Manufacturing & Factory Operations</li>
+          <li>Logistics & Warehousing</li>
+          <li>Automotive & Technical Trades</li>
+          <li>Agriculture & Dairy</li>
         </ul>
       </div>
 
       <div class="footer-col footer-contact">
         <h4>Contact</h4>
-        <div class="contact-row">
-          <div>
-            <strong>Email</strong>
-            <p><a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></p>
-          </div>
-          <div>
-            <strong>Phone</strong>
-            <p><a href="tel:+xxxxxxxxxxx">+xx xxxxx xxxxx</a></p>
-          </div>
-        </div>
-
-        <div class="footer-address">
-          <strong>Head Office:</strong>
-          <p>
-            “Everest House”<br>
-            Between Mavdi Circle & Gondal Circle,<br>
-            150 Feet Ring Road,<br>
-            Rajkot – 360 004,<br>
-            Gujarat, India
-          </p>
-        </div>
+        <p>Email: <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></p>
+        <p>Phone: <a href="tel:+xxxxxxxxxxx">+xx xxxxx xxxxx</a></p>
+        <p><strong>Head Office:</strong></p>
+        <p>“Everest House”<br>Between Mavdi Circle & Gondal Circle,<br>150 Feet Ring Road,<br>Rajkot – 360 004,<br>Gujarat, India</p>
       </div>
     </div>
 
     <div class="footer-bottom">© 2026 On Service Travel Consultants (OSTC) | Ethical & Legal Overseas Recruitment</div>
   </footer>
 
-  <!-- keep your main JS (reveal, counters, timeline etc.) -->
+  <!-- NO sticky CTA / NO WhatsApp (per your request) -->
+
+  <!-- existing site JS for reveal/counters/timeline -->
   <script src="script.js"></script>
 
-  <!-- small inline helper: variant toggles and initializing counters if not already run -->
+  <!-- Extra: small inline JS to ensure hero headline variants can be easily toggled later (no UI shown) -->
   <script>
     (function(){
-      // Optional: swap hero headline variant automatically if admin wants.
-      // Default is the main headline already in the markup.
-      // Simple counter safeguard: mark counters as counted when visible (script.js already does this).
-      // No extra actions required here.
+      // Keep default headline as provided. If you later want variant A/B, we can toggle via JS.
+      // This small block intentionally does nothing now to avoid changing content.
     })();
   </script>
 </body>
