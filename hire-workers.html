@@ -1,310 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hire Workers | On Service Travel Consultants</title>
-  <meta name="description" content="Hire verified, compliant workers from India to Europe. Fast shortlists, full visa support, local onboarding and replacement guarantees.">
+  <meta name="description" content="Hire verified, compliant foreign workers from India to Europe. Fast placements, full visa support, local onboarding.">
   <link rel="stylesheet" href="style.css">
+  <!-- Small page-specific styles: animations, bullets, image placeholders -->
+  <style>
+    /* subtle fade-up for sections */
+    .fade-up { opacity: 0; transform: translateY(10px); animation: fadeUp 0.7s ease forwards; }
+    .fade-up.delay { animation-delay: 0.12s; }
+    .fade-up.delay-2 { animation-delay: 0.22s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* improved paragraph spacing and readable max width */
+    .lead, .body-copy { max-width: 920px; margin: 0 auto 18px; line-height: 1.6; color: #222; font-size: 16px; }
+
+    /* animated bullet list (gold icon) */
+    .bullet-list { list-style: none; padding-left: 0; margin: 16px auto; max-width:760px; text-align:left; }
+    .bullet-list li {
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: linear-gradient(135deg,#d4af37,#f5e29a);
+      box-shadow: 0 4px 10px rgba(212,175,55,0.12);
+      transform: scale(0.9);
+      animation: pop 1s ease infinite;
+      background-size: 200% 200%;
+    }
+    /* subtle pop animation, offset each bullet by CSS - works on hover too */
+    @keyframes pop {
+      0% { transform: scale(.92); filter: saturate(.9); }
+      50% { transform: scale(1.03); filter: saturate(1.08); }
+      100% { transform: scale(.92); filter: saturate(.95); }
+    }
+    .bullet-list li strong { font-weight: 700; color: #111; }
+
+    /* image placeholder style - keep room for images you add later */
+    .image-spot {
+      max-width: 920px;
+      margin: 22px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(180deg,#fff,#f7f7f8);
+      border: 1px solid rgba(0,0,0,0.03);
+      height: 260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#888;
+      font-size:14px;
+    }
+
+    /* testimonials: simple list, no cards */
+    .testimonials { max-width:920px; margin: 12px auto; text-align:left; }
+    .testimonials blockquote {
+      margin: 12px 0;
+      padding-left: 14px;
+      border-left: 4px solid rgba(212,175,55,0.9);
+      color:#333;
+      background: rgba(212,175,55,0.03);
+      border-radius:6px;
+      padding:12px 14px;
+      font-style: normal;
+    }
+    .testimonials cite { display:block; margin-top:6px; color:#666; font-size:13px; }
+
+    /* slimmed trust row (2 items only) */
+    .trust-row { display:flex; gap:18px; justify-content:center; align-items:flex-start; flex-wrap:wrap; max-width:920px; margin:16px auto; }
+    .trust-item { background:#fff; padding:16px 18px; border-radius:10px; border:1px solid rgba(0,0,0,0.04); min-width:260px; text-align:left; }
+    .trust-item h4 { margin-bottom:8px; color:#d4af37; }
+
+    /* reduce card look usage — keep only minimal card visuals */
+    .minimal-card { padding:20px; border-radius:12px; background:#fff; border:1px solid rgba(0,0,0,0.04); max-width:920px; margin:12px auto; }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">OSTC</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="countries.html">Countries</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">OSTC</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="hire-workers.html">Hire Workers</a>
+      <a href="services.html">Services</a>
+      <a href="countries.html">Countries</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
-    <h1>Hire Verified Workers from India — Fast & Fully Compliant</h1>
-    <p>Shortlists in 72 hours. Visa, embassy paperwork and local onboarding handled end-to-end. Trusted by employers across Europe.</p>
+  <!-- HERO -->
+  <section class="hero fade-up">
+    <div>
+      <h1>Trusted hires from India, fast — screened, legal, ready to work.</h1>
+      <p class="lead">Hire reliable, verified workers for cleaning, hospitality, construction and more — we handle recruitment, compliance, and relocation so you don’t have to.</p>
+      <!-- single CTA only (no sticky CTA / no WhatsApp) -->
+      <div style="margin-top:10px;">
+        <a class="btn" href="contact.html#contact">Get Shortlist Now</a>
+        <a class="btn" href="contact.html#contact" style="margin-left:12px;">Book Free Call</a>
+      </div>
+    </div>
+  </section>
 
-    <div style="margin-top:20px;">
-      <a href="#contact" class="btn">Get Shortlist Now</a>
-      <a href="#contact" class="btn" style="margin-left:12px;">Book Free Call</a>
+  <!-- QUICK PITCH -->
+  <section class="section fade-up delay">
+    <h2>Short pitch</h2>
+    <p class="body-copy">
+      At OnServiceTravel we find dependable, motivated foreign workers who fit your needs and your local rules.
+      We vet every candidate, manage visas and paperwork, and deliver workers who start on time — reducing your hiring risk and saving you weeks of admin.
+      Our placements are designed to reduce downtime and remove paperwork headaches for employers.
+    </p>
+
+    <div class="image-spot" aria-hidden="true">Image space — replace with a photo of workers or your Rajkot testing facility (1800×900 recommended)</div>
+  </section>
+
+  <!-- WHY EMPLOYERS PICK US -->
+  <section class="section fade-up delay-2">
+    <h2>Why employers pick us</h2>
+
+    <ul class="bullet-list">
+      <li><strong>Verified candidates</strong> — background checks, references, skill validation and trade testing before hire.</li>
+      <li><strong>Full compliance</strong> — LMIA / work permit support and local-country documentation handled end-to-end.</li>
+      <li><strong>Fast placements</strong> — curated shortlists in days; on-site ready in weeks for common roles.</li>
+      <li><strong>Cost-effective</strong> — lower hiring overhead and predictable fees so budgets stay clear.</li>
+      <li><strong>Local support</strong> — in-country onboarding and a local contact for smooth arrival.</li>
+      <li><strong>Transparent process</strong> — clear pricing, written guarantees, and candidate profiles before you decide.</li>
+    </ul>
+
+    <div class="minimal-card">
+      <h3 style="color:#d4af37; margin-bottom:8px;">Our 4-step hiring process</h3>
+      <ol style="padding-left:20px; line-height:1.6;">
+        <li>Tell us your role, location, timeline.</li>
+        <li>We source & screen candidates (skills, ID, references).</li>
+        <li>We handle legal documents, visas & travel logistics.</li>
+        <li>Candidate arrives — you approve, they start. Simple.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES US DIFFERENT -->
+  <section class="section fade-up">
+    <h2>What makes us different</h2>
+    <p class="body-copy">
+      We don’t just send CVs. We provide fully verified workers with documented skill checks,
+      pre-departure training when needed, and a local support line after arrival.
+      You’ll get professional candidates who understand workplace expectations and arrive ready to add value.
+    </p>
+
+    <!-- trust row with only 2 items to avoid card overload -->
+    <div class="trust-row">
+      <div class="trust-item">
+        <h4>Replacement guarantee</h4>
+        <p style="margin:0;">We offer a replacement within the agreed guarantee period if a placement fails — reducing downtime and cost to you.</p>
+      </div>
+      <div class="trust-item">
+        <h4>Transparent fees</h4>
+        <p style="margin:0;">Written fee breakdowns and clear milestone payments — no hidden costs, no surprises.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section fade-up delay">
+    <h2>Short FAQ</h2>
+
+    <div class="minimal-card">
+      <p><strong>Q: How do you ensure legal compliance?</strong><br>
+      A: We prepare and review all paperwork, coordinate with local employers’ legal teams, and follow country-specific immigration rules.</p>
+
+      <p style="margin-top:10px;"><strong>Q: Can I interview candidates first?</strong><br>
+      A: Yes — video interviews, live interviews and sample-task assessments are standard.</p>
+
+      <p style="margin-top:10px;"><strong>Q: What about replacements?</strong><br>
+      A: We offer a replacement/guarantee period — details are provided in the contract and depend on role and country.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (compact list — not cards) -->
+  <section class="section fade-up">
+    <h2>Employer feedback</h2>
+
+    <div class="testimonials">
+      <blockquote>“Placed 12 cleaners in 3 weeks. Zero paperwork headaches.” <cite>— CityClean UK, HR</cite></blockquote>
+      <blockquote>“Trade-tested workers arrived ready to work — saved training time.” <cite>— Alpine Constructions, Germany</cite></blockquote>
+      <blockquote>“Smooth visa handling and local onboarding — no surprises.” <cite>— Bayline Facilities, Netherlands</cite></blockquote>
+      <blockquote>“Fast shortlist and excellent candidate quality.” <cite>— Seaside Care Services, Portugal</cite></blockquote>
+      <blockquote>“Replacement guarantee worked as promised during a busy season.” <cite>— Nordic Logistics, Sweden</cite></blockquote>
+      <blockquote>“Clear cost breakdowns and end-to-end support.” <cite>— Medina Resorts, Spain</cite></blockquote>
+      <blockquote>“We now outsource seasonal hiring to OSTC — it just works.” <cite>— EastPark Manufacturing, Poland</cite></blockquote>
     </div>
 
-    <div style="margin-top:18px; font-size:0.95rem; opacity:0.9;">
-      <strong>Call:</strong> <a href="tel:+919624001714">+91 96240 01714</a> &nbsp; • &nbsp;
-      <strong>Email:</strong> <a href="mailto:info@onservicetravel.com">info@onservicetravel.com</a>
-    </div>
-  </div>
-</section>
+    <p style="text-align:center; color:#666; font-size:13px; margin-top:6px;">(Replace placeholder names with real clients and logos for best results.)</p>
+  </section>
 
-<!-- TRUST BAR -->
-<section class="section">
-  <div class="grid" style="max-width:1100px; margin:auto;">
-    <div class="card">
-      <h3>Verified Candidates</h3>
-      <p>Background & reference checks, ID verification and trade testing at our Rajkot facility.</p>
-    </div>
-    <div class="card">
-      <h3>Full Compliance</h3>
-      <p>Embassy-ready documents, medicals, police clearance and country-specific permit support.</p>
-    </div>
-    <div class="card">
-      <h3>Replacement Guarantee</h3>
-      <p>We guarantee replacements during the agreed probation period to reduce downtime.</p>
-    </div>
-  </div>
-</section>
+  <!-- CONTACT CTA (single place only) -->
+  <section class="section fade-up delay-2" id="contact">
+    <h2>Ready to hire? Get a free shortlist in 72 hours</h2>
+    <p class="lead">Contact us with the role, start date and number of workers. We’ll confirm fees and send candidate profiles for your review.</p>
 
-<!-- QUICK PROCESS -->
-<section class="section">
-  <h2>How it works — 4 simple steps</h2>
-
-  <div class="grid" style="max-width:1100px; margin:auto;">
-    <div class="card">
-      <h3>1. Define role</h3>
-      <p>You tell us the job, contract length, wage and start date.</p>
+    <div style="text-align:center; margin-top:12px;">
+      <a class="btn" href="contact.html#contact">Request Free Shortlist</a>
+      <a class="btn" href="contact.html#contact" style="margin-left:10px;">Book Free Call</a>
     </div>
 
-    <div class="card">
-      <h3>2. Source & screen</h3>
-      <p>We shortlist candidates with trade checks, references and ID verification.</p>
-    </div>
+    <p style="max-width:920px;margin:14px auto 0; font-size:14px; color:#444;">Email: <a href="mailto:info@onservicetravel.com">info@onservicetravel.com</a> • Phone: <a href="tel:+919624001714">+91 96240 01714</a></p>
+  </section>
 
-    <div class="card">
-      <h3>3. Legal & travel</h3>
-      <p>We handle work permits, embassy submissions, medicals and ticketing.</p>
-    </div>
+  <!-- footer (unchanged styling) -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>On Service Travel Consultants</h3>
+        <p>Global Workforce Recruitment & Deployment</p>
+        <p>🇮🇳 Based in India, hiring globally</p>
+      </div>
 
-    <div class="card">
-      <h3>4. Arrival & support</h3>
-      <p>Arrival help, onboarding and a local point of contact for smooth integration.</p>
-    </div>
-  </div>
-</section>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>Overseas Recruitment</li>
+          <li>Trade Testing</li>
+          <li>Visa Processing</li>
+          <li>Employer Workforce Solutions</li>
+          <li>Pre-Departure Orientation</li>
+        </ul>
+      </div>
 
-<!-- BENEFITS -->
-<section class="section">
-  <h2>Why employers in Europe trust us</h2>
-  <ul style="list-style:none; max-width:900px; margin:12px auto 0; text-align:left; padding-left:0;">
-    <li style="margin-bottom:10px;"><strong>Speed:</strong> Curated shortlist in ~72 hours for common roles.</li>
-    <li style="margin-bottom:10px;"><strong>Lower overhead:</strong> We cut hiring admin and reduce empty shifts.</li>
-    <li style="margin-bottom:10px;"><strong>Verified quality:</strong> Trade tested and pre-trained where needed.</li>
-    <li style="margin-bottom:10px;"><strong>Transparent pricing:</strong> Written fee breakdowns before you commit.</li>
-    <li style="margin-bottom:10px;"><strong>Local follow-up:</strong> On-the-ground support after arrival.</li>
-  </ul>
-</section>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li>Construction</li>
+          <li>Manufacturing</li>
+          <li>Logistics</li>
+          <li>Automotive</li>
+          <li>Agriculture</li>
+        </ul>
+      </div>
 
-<!-- TESTIMONIALS -->
-<section class="section">
-  <h2>Employer success stories</h2>
-
-  <div class="grid" style="max-width:1200px; margin:auto;">
-    <div class="card">
-      <p class="testimonial-quote">“OSTC placed 10 hospitality staff in two weeks. Paperwork was flawless and the workers were punctual and trained.”</p>
-      <p class="testimonial-meta"><strong>Greenfield Hotels</strong> — UK, HR Manager</p>
-    </div>
-
-    <div class="card">
-      <p class="testimonial-quote">“Great local support. The replacement guarantee meant no downtime on our site.”</p>
-      <p class="testimonial-meta"><strong>Nordic Logistics</strong> — Sweden, Operations Lead</p>
-    </div>
-
-    <div class="card">
-      <p class="testimonial-quote">“Trade-tested and reliable. Their Rajkot testing saved us months of training time.”</p>
-      <p class="testimonial-meta"><strong>Alpine Constructions</strong> — Germany, Site Manager</p>
-    </div>
-
-    <div class="card">
-      <p class="testimonial-quote">“Clear costs and immigration help made the whole process easy. Highly recommended for seasonal hiring.”</p>
-      <p class="testimonial-meta"><strong>Medina Resorts</strong> — Spain, HR Director</p>
-    </div>
-
-    <div class="card">
-      <p class="testimonial-quote">“We received skilled workers who met our language and safety standards on arrival.”</p>
-      <p class="testimonial-meta"><strong>EastPark Manufacturing</strong> — Poland, Operations Manager</p>
-    </div>
-
-    <div class="card">
-      <p class="testimonial-quote">“Fast shortlist, accurate references, and helpful local onboarding — a professional service.”</p>
-      <p class="testimonial-meta"><strong>Seaside Care Services</strong> — Portugal, Managing Director</p>
-    </div>
-
-    <div class="card">
-      <p class="testimonial-quote">“They handled embassy paperwork and travel logistics end-to-end — stress free.”</p>
-      <p class="testimonial-meta"><strong>Bayline Facilities</strong> — Netherlands, Procurement Lead</p>
-    </div>
-  </div>
-
-  <p style="font-size:0.92rem; color:#666; margin-top:12px; max-width:900px; margin-left:auto; margin-right:auto;">
-    Tip: Add real client logos and a short one-page case study for each top testimonial to boost trust and ad performance.
-  </p>
-</section>
-
-<!-- FAQ -->
-<section class="section">
-  <h2>Short FAQ</h2>
-  <div class="grid" style="max-width:1100px; margin:auto;">
-    <div class="card">
-      <p><strong>Q:</strong> How fast can you deliver candidates?</p>
-      <p><strong>A:</strong> Shortlists in ~72 hours for most roles. Visa timelines vary by country.</p>
-    </div>
-
-    <div class="card">
-      <p><strong>Q:</strong> Do you handle legal compliance?</p>
-      <p><strong>A:</strong> Yes — we prepare embassy-ready files, coordinate medicals/police checks and work with local lawyers where needed.</p>
-    </div>
-
-    <div class="card">
-      <p><strong>Q:</strong> Can we interview first?</p>
-      <p><strong>A:</strong> Yes — video calls, recorded interviews and sample tasks are available before selection.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT / CTA -->
-<section class="section" id="contact">
-  <h2>Ready to hire? Get a free shortlist in 72 hours</h2>
-  <p style="max-width:900px; margin:auto;">
-    Fill the quick form below or call/WhatsApp us. We’ll review the role, confirm fees and send candidate profiles for your review.
-  </p>
-
-  <div style="max-width:920px; margin:20px auto 0;">
-    <div class="card">
-      <form id="contactForm">
-        <div style="display:grid; gap:12px;">
-          <input name="employer" id="employer" placeholder="Company name" required style="padding:12px; border-radius:8px; border:1px solid #e5e5e5;">
-          <input name="contactName" id="contactName" placeholder="Your name" required style="padding:12px; border-radius:8px; border:1px solid #e5e5e5;">
-          <input name="email" id="email" type="email" placeholder="Email" required style="padding:12px; border-radius:8px; border:1px solid #e5e5e5;">
-          <input name="phone" id="phone" placeholder="Phone (include country code)" required style="padding:12px; border-radius:8px; border:1px solid #e5e5e5;">
-          <input name="role" id="role" placeholder="Role you want to hire (e.g., Cleaner, Construction labourer)" required style="padding:12px; border-radius:8px; border:1px solid #e5e5e5;">
-          <input name="location" id="location" placeholder="Country / Region in Europe" style="padding:12px; border-radius:8px; border:1px solid #e5e5e5;">
-          <textarea name="message" id="message" placeholder="Any details (number of workers, start date, special skills)" rows="4" style="padding:12px; border-radius:8px; border:1px solid #e5e5e5;"></textarea>
-
-          <div style="display:flex; gap:12px; align-items:center;">
-            <button type="submit" class="btn">Send enquiry (email)</button>
-            <a href="https://wa.me/919624001714" target="_blank" class="whatsapp" style="display:inline-flex; align-items:center; justify-content:center; padding:10px 14px; border-radius:8px; text-decoration:none;">WhatsApp</a>
-            <a href="tel:+919624001714" class="btn" style="margin-left:auto;">Call +91 96240 01714</a>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <div class="contact-row">
+          <div>
+            <strong>Email</strong>
+            <p><a href="mailto:info@onservicetravel.com">info@onservicetravel.com</a></p>
           </div>
+          <div>
+            <strong>Phone</strong>
+            <p><a href="tel:+919624001714">+91 96240 01714</a></p>
+          </div>
+        </div>
 
-          <p style="font-size:0.9rem; color:#666; margin-top:8px;">
-            We respect your privacy — employer details are used only to process your enquiry.
+        <div class="footer-address">
+          <strong>Head Office:</strong>
+          <p>
+            “Everest House”<br>
+            Between Mavdi Circle & Gondal Circle,<br>
+            150 Feet Ring Road,<br>
+            Rajkot – 360 004,<br>
+            Gujarat, India
           </p>
         </div>
-      </form>
-    </div>
-  </div>
-
-</section>
-
-<footer class="main-footer">
-  <div class="footer-container">
-
-    <div class="footer-brand">
-      <h3>On Service Travel Consultants</h3>
-      <p>Global Workforce Recruitment & Deployment</p>
-      <p>🇮🇳 Based in India, hiring globally</p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li>Overseas Recruitment</li>
-        <li>Trade Testing</li>
-        <li>Visa Processing</li>
-        <li>Employer Workforce Solutions</li>
-        <li>Pre-Departure Orientation</li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Industries</h4>
-      <ul>
-        <li>Construction</li>
-        <li>Manufacturing</li>
-        <li>Logistics</li>
-        <li>Automotive</li>
-        <li>Agriculture</li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="countries.html">Countries</a></li>
-        <li><a href="jobs.html">Vacancies</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col footer-contact">
-      <h4>Contact</h4>
-
-      <div class="contact-row">
-        <div>
-          <strong>Email</strong>
-          <p><a href="mailto:info@onservicetravel.com">info@onservicetravel.com</a></p>
-        </div>
-
-        <div>
-          <strong>Phone</strong>
-          <p><a href="tel:+919624001714">+91 96240 01714</a></p>
-        </div>
       </div>
-
-      <div class="footer-address">
-        <strong>Head Office:</strong>
-        <p>
-          “Everest House”<br>
-          Between Mavdi Circle & Gondal Circle,<br>
-          150 Feet Ring Road,<br>
-          Rajkot – 360 004,<br>
-          Gujarat, India
-        </p>
-      </div>
-
     </div>
 
-  </div>
+    <div class="footer-bottom">
+      © 2026 On Service Travel Consultants (OSTC) | Ethical & Legal Overseas Recruitment
+    </div>
+  </footer>
 
-  <div class="footer-bottom">
-    © 2026 On Service Travel Consultants (OSTC) | Ethical & Legal Overseas Recruitment
-  </div>
-</footer>
-
-<a href="#contact" class="sticky-cta">Get Shortlist</a>
-<a href="https://wa.me/919624001714" class="whatsapp">W</a>
-
-<script>
-  // Simple mailto form submit so you get employer details straight to email
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const employer = encodeURIComponent(document.getElementById('employer').value || '—');
-    const name = encodeURIComponent(document.getElementById('contactName').value || '—');
-    const email = encodeURIComponent(document.getElementById('email').value || '—');
-    const phone = encodeURIComponent(document.getElementById('phone').value || '—');
-    const role = encodeURIComponent(document.getElementById('role').value || '—');
-    const location = encodeURIComponent(document.getElementById('location').value || '—');
-    const message = encodeURIComponent(document.getElementById('message').value || '—');
-
-    const subject = encodeURIComponent('Hiring enquiry: ' + role + ' — ' + employer);
-    const body = encodeURIComponent(
-      'Company: ' + decodeURIComponent(employer) + '%0D%0A' +
-      'Contact name: ' + decodeURIComponent(name) + '%0D%0A' +
-      'Email: ' + decodeURIComponent(email) + '%0D%0A' +
-      'Phone: ' + decodeURIComponent(phone) + '%0D%0A' +
-      'Role: ' + decodeURIComponent(role) + '%0D%0A' +
-      'Location (Europe): ' + decodeURIComponent(location) + '%0D%0A%0D%0A' +
-      'Details: ' + decodeURIComponent(message)
-    );
-
-    // Opens employer details in your default mail app
-    window.location.href = 'mailto:info@onservicetravel.com?subject=' + subject + '&body=' + body;
-  });
-</script>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // trigger fade-up animations when sections enter viewport (lightweight)
+    document.addEventListener('DOMContentLoaded', function(){
+      const els = document.querySelectorAll('.fade-up');
+      const obs = new IntersectionObserver((items) => {
+        items.forEach(i => {
+          if (i.isIntersecting) {
+            i.target.classList.add('visible');
+            // ensure CSS animation plays by toggling style
+            i.target.style.animationPlayState = 'running';
+            obs.unobserve(i.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(el => obs.observe(el));
+    });
+  </script>
 </body>
 </html>
